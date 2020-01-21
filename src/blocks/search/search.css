@@ -1,9 +1,11 @@
 @import url(./__title/search__title.css);
 @import url(./__subtitle/search__subtitle.css);
+@import url(./__input/search__input.css);
+@import url(./__elements/search__elements.css);
+@import url(./__button/search__button.css);
 
 .search {
   display: flex;
-  flex-direction: column;
+  margin: auto;
   justify-content: center;
-  align-items: center;
 }

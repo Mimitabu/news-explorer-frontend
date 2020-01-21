@@ -1,0 +1,6 @@
+.search__elements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
