@@ -1,0 +1,18 @@
+@import url(./__items/header__items.css);
+@import url(./__nav/header__nav.css);
+@import url(./__title/header__title.css);
+@import url(./__link/header__link.css);
+@import url(./__main/header__main.css);
+@import url(./__saved-massages/header__saved-massages.css);
+@import url(./__logout/header__logout.css);
+@import url(./__user-name/header__user-name.css);
+@import url(./__exit/header__exit.css);
+
+.header {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}

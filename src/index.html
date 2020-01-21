@@ -2,11 +2,49 @@
 <html lang="ru">
 <head>
       <meta charset="UTF-8">
-      <title>Webpack</title>
+      <meta name="viewport" content="width=device-width,
+   initial-scale=1.0">
+      <title>News-explorer</title>
       <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+      <meta name='author' content='Marie Slavina'>
 </head>
 <body>
-      <h1>Hello</h1>
+  <div class="page">
+    <div class="header-search-page">
+      <header class="header header_authorized">
+        <div class="header__items">
+          <h2 class="header__title">NewsExplorer</h2>
+          <nav class="header__nav">
+            <a href="#" class="header__link header__main">Главная</a>
+            <a href="#" class="header__link header__saved-massages">Сохранённые статьи</a>
+            <div class="header__logout">
+              <a href="#" class="header__link header__user-name">Грета</a>
+              <img class="header__exit" src="<%=require('./images/logout.svg').default%>" alt="exit logo">
+            </div>
+          </nav>
+          </div>
+      </header>
+      <!--
+        <header class="header header_unauthorized">
+        <div class="header__items">
+          <h2 class="header__title">NewsExplorer</h2>
+          <nav class="header__nav">
+            <a href="#" class="header__main">Главная</a>
+            <a href="#" class="header__login">Авторизоваться</a>
+          </nav>
+          </div>
+      </header>
+      -->
+      <div class="search">
+        <h2 class="search__title">Что в мире творится?</h2>
+        <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h3>
+        <form class="search__form">
+          <input type="text" name="keyword" class="search__input" placeholder="Введите тему новости">
+          <button class="search__button">Искать</button>
+        </form>
+      </div>
+    </div>
+  </div>
       <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+@import url(./__title/search__title.css);
+@import url(./__subtitle/search__subtitle.css);
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

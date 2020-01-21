@@ -1,0 +1,8 @@
+.page {
+    background-image: url(../../images/main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 576px;
+    width: 100%;
+    margin: 0px auto;
+}
