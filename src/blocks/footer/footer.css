@@ -1,0 +1,9 @@
+@import url(./__content/footer__content.css);
+@import url(./__copyright/footer__copyright.css);
+@import url(./__main-link/footer__main-link.css);
+@import url(./__social-link/footer__social-link.css);
+
+.footer {
+  width: 100%;
+  height: 80px;
+}
