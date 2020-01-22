@@ -35,7 +35,7 @@
           </div>
       </header>
       -->
-      <div class="search">
+      <section class="search">
         <div class="search__elements">
           <h2 class="search__title">Что в мире творится?</h2>
           <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h3>
@@ -44,8 +44,16 @@
             <button class="search__button">Искать</button>
           </form>
         </div>
-      </div>
+      </section>
     </div>
+    <section class="about-author">
+      <img class="about-author__avatar" src="<%=require('./images/avatar.jpg').default%>" alt="author's avatar">
+      <div class="about-author__content">
+        <h3 class="about-author__title">Об авторе</h3>
+        <p class="about-author__text">Это блок с описанием автора проекта. Здесь следует    указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете. </p>
+        <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.</p>
+      </div>
+    </section>
   </div>
       <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
