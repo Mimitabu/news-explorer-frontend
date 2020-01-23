@@ -79,10 +79,10 @@
           <span class="popup__span-name">Email</span>
           <input required type="email" name="email" class="popup__input popup__input_signin-email"
           placeholder="Введите почту">
-          <span class="error-message error-email"></span>
+          <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
           <input required type="password" name="password" class="popup__input popup__input_signin-password" placeholder="Введите пароль">
-          <span class="error-message error-password"></span>
+          <span class="popup__error-message popup__error-password"></span>
           <button disabled class="popup__button popup__button_signin popup__button_disabled">Войти
           </button>
           <span class="popup__span-link">или<a href="#" class="popup__link"><span> Зарегистрироваться</span></a></span>
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div class="popup popup__signup popup_is-opened">
+    <div class="popup popup__signup">
       <div class="popup__content">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup">
         <h3 class="popup__title">Регистрация</h3>
@@ -98,17 +98,26 @@
           <span class="popup__span-name">Email</span>
           <input required type="email" name="email" class="popup__input popup__input_signup-email"
           placeholder="Введите почту">
-          <span class="error-message error-email"></span>
+          <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
           <input required type="password" name="password" class="popup__input popup__input_signup-password" placeholder="Введите пароль">
-          <span class="error-message error-password"></span>
+          <span class="popup__error-message popup__error-password"></span>
           <span class="popup__span-name">Имя</span>
           <input required type="text" name="password" class="popup__input popup__input_signup-name" placeholder="Введите своё имя">
-          <span class="error-message error-name"></span>
+          <span class="popup__error-message popup__error-name"></span>
+          <span class="popup__error-message popup__error-user"></span>
           <button disabled class="popup__button popup__button_signup popup__button_disabled">Зарегистрироваться
           </button>
           <span class="popup__span-link">или<a href="#" class="popup__link"><span> Войти</span></a></span>
         </form>
+      </div>
+    </div>
+
+    <div class="popup popup__successful-signup popup_is-opened">
+      <div class="popup__content popup__content_successful-signup">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
+        <h3 class="popup__title popup__title_successful-signup">Пользователь успешно        зарегистрирован!</h3>
+        <a href="#" class="popup__link"><span> Выполнить вход</span></a>
       </div>
     </div>
   </div>
