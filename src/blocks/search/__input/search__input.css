@@ -7,7 +7,7 @@
   border-radius: 100px;
 }
 
-::placeholder {
+.search__input::placeholder {
   color: #B6BCBF;
   padding: 24px;
 }

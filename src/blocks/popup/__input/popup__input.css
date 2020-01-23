@@ -1,17 +1,17 @@
 .popup__input {
   border: none;
-  border-bottom: 1px solid #000000;
-  opacity: .2;
+  border-bottom: 1px solid #B6BCBF;
+/*  opacity: .2;*/
   margin-bottom: 30px;
 }
 
-::placeholder {
+.popup__input::placeholder {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   padding: 9px 0px;
-  color: #000000;
+  color: #B6BCBF;
 };
 
