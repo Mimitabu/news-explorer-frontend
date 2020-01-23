@@ -40,7 +40,7 @@
           <h2 class="search__title">Что в мире творится?</h2>
           <h3 class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h3>
           <form class="search__form">
-            <input type="text" name="keyword" class="search__input" placeholder="Введите тему новости">
+            <input required type="text" name="keyword" class="search__input" placeholder="Введите тему новости">
             <button class="search__button">Искать</button>
           </form>
         </div>
@@ -71,7 +71,7 @@
         </div>
       </div>
     </footer>
-    <div class="popup popup__signin popup_is-opened">
+    <div class="popup popup__signin">
       <div class="popup__content">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
         <h3 class="popup__title">Вход</h3>
@@ -86,6 +86,28 @@
           <button disabled class="popup__button popup__button_signin popup__button_disabled">Войти
           </button>
           <span class="popup__span-link">или<a href="#" class="popup__link"><span> Зарегистрироваться</span></a></span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup__signup popup_is-opened">
+      <div class="popup__content">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="signup">
+          <span class="popup__span-name">Email</span>
+          <input required type="email" name="email" class="popup__input popup__input_signup-email"
+          placeholder="Введите почту">
+          <span class="error-message error-email"></span>
+          <span class="popup__span-name">Пароль</span>
+          <input required type="password" name="password" class="popup__input popup__input_signup-password" placeholder="Введите пароль">
+          <span class="error-message error-password"></span>
+          <span class="popup__span-name">Имя</span>
+          <input required type="text" name="password" class="popup__input popup__input_signup-name" placeholder="Введите своё имя">
+          <span class="error-message error-name"></span>
+          <button disabled class="popup__button popup__button_signup popup__button_disabled">Зарегистрироваться
+          </button>
+          <span class="popup__span-link">или<a href="#" class="popup__link"><span> Войти</span></a></span>
         </form>
       </div>
     </div>
