@@ -6,6 +6,7 @@
 .about-author {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: calc(100% - 208px);
+  margin: auto;
   height: 624px;
 }

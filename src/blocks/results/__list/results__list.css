@@ -1,0 +1,8 @@
+.results__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,400px);
+  grid-gap: 16px 16px;
+  justify-content: center;
+  width: calc(100% - 208px);
+  margin: auto;
+}
