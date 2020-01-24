@@ -1,4 +1,5 @@
 .result-card__description {
   width: calc(100% - 48px);
-  margin: auto;
+  margin: 0px auto;
+  height: 304px;
 }

@@ -1,0 +1,20 @@
+.results__more-button {
+  background: #FFFFFF;
+  border-radius: 80px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  align-items: center;
+  text-align: center;
+  color: #1A1B22;
+  border: none;
+  width: 288px;
+  height: 64px;
+  margin: 56px 576px 80px;
+}
+
+.results__more-button:hover {
+  background: #E6E8EB;
+}
