@@ -47,7 +47,19 @@
       </section>
     </div>
 
-    <section class="results">
+    <section class="news-search">
+      <i class="news-search__circle-preloader"></i>
+      <p class="news-search__text">Идет поиск новостей...</p>
+    </section>
+
+    <section class="no-results">
+      <img class="no-results__image" src="%=require('./images/not-found.svg').default%>"
+      alt="sad loupe">
+      <h3 class="no-results__title">Ничего не найдено</h3>
+      <p class="no-results__text">К сожалению по вашему запросу ничего не найдено.</p>
+    </section>
+
+    <section class="results results_is-opened">
       <h3 class="results__title">Результаты поиска</h3>
       <div class="results__list">
         <div class="result-card">
