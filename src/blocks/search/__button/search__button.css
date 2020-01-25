@@ -6,4 +6,13 @@
   transform: translateX(-168px);
   border: solid 1px #2F71E5;
   color: #FFFFFF;
+  cursor: pointer;
+}
+
+.search__button:hover {
+  background: #347EFF;
+}
+
+.search__button:active {
+  background: #2A65CC;
 }

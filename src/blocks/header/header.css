@@ -4,10 +4,13 @@
 @import url(./__link/header__link.css);
 @import url(./__main/header__main.css);
 @import url(./__saved-massages/header__saved-massages.css);
+@import url(./__saved-massages/_is-open/header__saved-massages_is-open.css);
 @import url(./__logout/header__logout.css);
+@import url(./__logout/_is-opened/header__logout_is-opened.css);
 @import url(./__user-name/header__user-name.css);
 @import url(./__exit/header__exit.css);
 @import url(./__login/header__login.css);
+@import url(./__login/_is-opened/header__login_is-opened.css);
 
 .header {
   width: 100%;
