@@ -3,12 +3,14 @@
 @import url(./__description/result-card__description.css);
 @import url(./__button-icon/result-card__button-icon.css);
 @import url(./__button-icon/_marced/result-card__button-icon_marced.css);
+@import url(./__button-icon/_favorites/result-card__button-icon_favorites.css);
 @import url(./__description-data/result-card__description-data.css);
 @import url(./__description-title/result-card__description-title.css);
 @import url(./__description-about/result-card__description-about.css);
 @import url(./__description-source/result-card__description-source.css);
 @import url(./__button-warning/result-card__button-warning.css);
 @import url(./__button-warning/_is-opened/result-card__button-warning_is-opened.css);
+@import url(./__key-word/result-card__key-word.css);
 
 .result-card {
   min-height: 576px;

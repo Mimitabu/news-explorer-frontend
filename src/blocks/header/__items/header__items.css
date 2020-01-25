@@ -2,7 +2,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    margin: auto 140px;
+    margin: auto 104px;
     justify-content: space-between;
     align-items: center;
+    color: #FFFFFF;
 }
