@@ -1,4 +1,5 @@
 @import url(./__image/result-card__image.css);
+@import url(./__image/_favorites/result-card__image_favorites.css);
 @import url(./__button/result-card__button.css);
 @import url(./__description/result-card__description.css);
 @import url(./__button-icon/result-card__button-icon.css);
@@ -11,6 +12,7 @@
 @import url(./__button-warning/result-card__button-warning.css);
 @import url(./__button-warning/_is-opened/result-card__button-warning_is-opened.css);
 @import url(./__key-word/result-card__key-word.css);
+@import url(./__button-content/result-card__button-content.css);
 
 .result-card {
   min-height: 576px;

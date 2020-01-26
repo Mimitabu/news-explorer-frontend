@@ -1,9 +1,6 @@
 .result-card__key-word {
   background-color: #FFFFFF;
   border-radius: 10px;
-  position: absolute;
-  top: 26px;
-  right: 300px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
@@ -12,4 +9,5 @@
   color: #000000;
   text-align: center;
   padding: 8px 12px;
+  margin: 24px 0px 0px 24px;
 }

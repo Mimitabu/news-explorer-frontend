@@ -4,11 +4,9 @@
   background-position: 50%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-/*  position: relative;*/
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-start;
-
 }
