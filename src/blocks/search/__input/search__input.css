@@ -11,3 +11,17 @@
   color: #B6BCBF;
   padding: 24px;
 }
+
+@media (max-width: 1024px) {
+  .search__input {;
+    width: 528px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search__input {;
+    width: 448px;
+    height: 56px;
+  }
+}

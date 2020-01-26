@@ -2,7 +2,23 @@
     background-image: url(../../images/main.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 576px;
+    height: 576px;
     width: 100%;
     margin: 0px auto;
+    background-position: center;
+}
+
+@media (max-width: 1024px) {
+  .header-search-page {
+    max-height: 488px;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-search-page {
+    max-height: 400px;
+    background-size: cover;
+
+  }
 }

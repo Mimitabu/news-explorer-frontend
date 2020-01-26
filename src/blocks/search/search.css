@@ -8,4 +8,17 @@
   display: flex;
   margin: auto;
   justify-content: center;
+  min-height: 496px;
+}
+
+@media (max-width: 1024px) {
+  .search {
+    min-height: 415px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    min-height: 334px;
+  }
 }
