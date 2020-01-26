@@ -12,7 +12,7 @@
   border: none;
   width: 288px;
   height: 64px;
-  margin: 56px 576px 80px;
+  margin: 56px auto 80px;
 }
 
 .results__more-button:hover {

@@ -2,13 +2,12 @@
 <html lang="ru">
 <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width,
-   initial-scale=1.0">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>News-explorer</title>
       <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
       <meta name='author' content='Marie Slavina'>
 </head>
-<body class="body">
+<body>
   <div class="page">
     <div class="header-search-page">
       <header class="header header_authorized">
@@ -55,10 +54,12 @@
       <div class="results__list">
         <div class="result-card">
           <div class="result-card__image" style="background-image: url(<%=require('./images/image_01.jpg').default%>);">
-          <div class="result-card__button">
-            <div class="result-card__button-icon"></div>
+          <div class="result-card__button-content">
+            <div class="result-card__button-warning">Войдите, чтобы сохранять статьи</div>
+            <div class="result-card__button">
+              <div class="result-card__button-icon"></div>
+            </div>
           </div>
-          <div class="result-card__button-warning">Войдите, чтобы сохранять статьи</div>
           </div>
           <div class="result-card__description">
             <p class="result-card__description-data">2 августа, 2019</p>
@@ -70,10 +71,10 @@
 
         <div class="result-card">
           <div class="result-card__image" style="background-image: url(<%=require('./images/image_02.jpg').default%>);">
+          <div class="result-card__button-warning">Войдите, чтобы сохранять статьи</div>
           <div class="result-card__button">
             <div class="result-card__button-icon"></div>
           </div>
-          <div class="result-card__button-warning">Войдите, чтобы сохранять статьи</div>
           </div>
           <div class="result-card__description">
             <p class="result-card__description-data">2 августа, 2019</p>
@@ -85,10 +86,10 @@
 
         <div class="result-card">
           <div class="result-card__image" style="background-image: url(<%=require('./images/image_03.jpg').default%>);">
+          <div class="result-card__button-warning result-card__button-warning_is-opened">Войдите, чтобы сохранять статьи</div>
           <div class="result-card__button">
             <div class="result-card__button-icon"></div>
           </div>
-          <div class="result-card__button-warning result-card__button-warning_is-opened">Войдите, чтобы сохранять статьи</div>
           </div>
           <div class="result-card__description">
             <p class="result-card__description-data">2 августа, 2019</p>
