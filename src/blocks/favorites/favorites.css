@@ -7,3 +7,17 @@
   width: calc(100% - 208px);
   margin: 40px auto 56px;
 }
+
+@media (max-width: 1024px) {
+  .favorites {
+    width: calc(100% - 144px);
+    margin: 32px auto 44px;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites {
+    width: calc(100% - 80px);
+    margin: 24px auto 32px;
+  }
+}
