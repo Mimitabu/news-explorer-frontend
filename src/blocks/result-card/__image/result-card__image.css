@@ -20,5 +20,12 @@
 @media (max-width: 768px) {
   .result-card__image {
     height: 150px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .result-card__image {
+    min-height: 196px;
   }
 }

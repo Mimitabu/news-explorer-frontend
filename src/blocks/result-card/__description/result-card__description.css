@@ -17,3 +17,9 @@
     height: 270px;
   }
 }
+
+@media (max-width: 767px) {
+  .result-card__description {
+/*    height: 246px;*/
+  }
+}

@@ -22,7 +22,7 @@
 
 @media (max-width: 768px) {
   .result-card__description-source {
-    left: 16px;
-    bottom: 16px;
+    position: relative;
+
   }
 }

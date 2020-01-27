@@ -46,3 +46,17 @@
     width: calc(100% - 80px);
   }
 }
+
+@media (max-width: 767px) {
+  .results__list {
+    grid-template-columns: repeat(auto-fill,288px);
+    grid-gap: 10px 10px;
+    width: calc(100% - 32px);
+  }
+}
+
+@media (max-width: 617px) {
+  .results__list {
+    padding: 0px;
+  }
+}

@@ -34,3 +34,9 @@
     margin: 22px auto 40px;
   }
 }
+
+@media (max-width: 617px) {
+  .results__more-button {
+    width: 288px;
+  }
+}
