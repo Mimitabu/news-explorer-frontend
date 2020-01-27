@@ -5,4 +5,17 @@
   font-size: 18px;
   line-height: 24px;
   color: #1A1B22;
+  margin: 0px 0px 24px;
+}
+
+@media (max-width: 1024px) {
+  .about-author__text {
+    margin: 0px 0px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-author__text {
+    margin: 0px 0px 16px;
+  }
 }

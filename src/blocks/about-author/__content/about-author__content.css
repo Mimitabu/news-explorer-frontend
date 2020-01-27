@@ -2,3 +2,17 @@
   width: 600px;
   margin-top: 131px;
 }
+
+@media (max-width: 1024px) {
+  .about-author__content {
+    width: 512px;
+    margin-top: 86px;
+  }
+}
+
+@media (max-width: 728px) {
+  .about-author__content {
+    width: 424px;
+    margin-top: 40px;
+  }
+}
