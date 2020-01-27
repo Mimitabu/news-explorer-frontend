@@ -4,6 +4,7 @@
 @import url(./__elements/search__elements.css);
 @import url(./__button/search__button.css);
 
+
 .search {
   display: flex;
   margin: auto;
@@ -20,5 +21,11 @@
 @media (max-width: 768px) {
   .search {
     min-height: 334px;
+  }
+}
+
+@media (max-width: 680px) {
+  .search {
+    min-height: 480px;
   }
 }

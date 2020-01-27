@@ -18,16 +18,33 @@
 }
 
 @media (max-width: 1024px) {
-  .search__button {;
+  .search__button {
     width: 164px;
     height: 60px;
   }
 }
 
 @media (max-width: 768px) {
-  .search__button {;
+  .search__button {
     width: 160px;
     height: 56px;
-    transform: translateX(-160px);
+    transform: translate(290px, -56px);
+
+  }
+}
+
+@media (max-width: 680px) {
+  .search__button {
+    width: 160px;
+    height: 56px;
+    transform: translate(-56px, 0px)
+  }
+}
+
+@media (max-width: 490px) {
+  .search__button {
+    width: 288px;
+    height: 56px;
+    transform: translateY(16px)
   }
 }

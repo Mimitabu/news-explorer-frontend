@@ -24,3 +24,12 @@
      margin: 0px 0px 18px;
   }
 }
+
+@media (max-width: 680px) {
+  .search__title {
+     font-size: 36px;
+     line-height: 40px;
+     margin: 0px 0px 16px;
+     max-width: 285px;
+  }
+}

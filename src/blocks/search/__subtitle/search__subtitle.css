@@ -20,3 +20,9 @@
      margin: 0px 0px 48px;
   }
 }
+
+@media (max-width: 680px) {
+  .search__subtitle {;
+     margin: 0px 0px 122px;
+  }
+}

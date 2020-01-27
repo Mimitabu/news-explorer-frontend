@@ -25,3 +25,17 @@
     height: 56px;
   }
 }
+
+@media (max-width: 680px) {
+  .search__input {;
+    width: 288px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 490px) {
+  .search__input {;
+    width: 288px;
+    height: 56px;
+  }
+}

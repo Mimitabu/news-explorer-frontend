@@ -7,14 +7,21 @@
   margin: auto;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .search__elements {
-/*    height: 488px;*/
+  margin: auto 163px;
   }
 }
 
-/*@media (max-width: 1024px) {
+
+@media (max-width: 680px) {
   .search__elements {
-    height: 488px;
+  margin: auto 19px;
   }
-}*/
+}
+
+@media (max-width: 490px) {
+  .search__elements {
+  margin: auto 46px;
+  }
+}

@@ -22,3 +22,11 @@
 
   }
 }
+
+@media (max-width: 680px) {
+  .header-search-page {
+    max-height: 536px;
+    background-size: cover;
+
+  }
+}
