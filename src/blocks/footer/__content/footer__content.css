@@ -6,3 +6,15 @@
   margin: auto;
   width: calc(100% - 208px);
 }
+
+@media (max-width: 1024px) {
+  .footer__content {
+    width: calc(100% - 144px);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__content {
+    width: calc(100% - 80px);
+  }
+}

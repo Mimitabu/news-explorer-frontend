@@ -9,3 +9,15 @@
   display: flex;
   margin: auto;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    height: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    height: 64px;
+  }
+}
