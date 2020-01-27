@@ -19,3 +19,9 @@
     width: calc(100% - 80px);
   }
 }
+
+@media (max-width: 425px) {
+  .header__items {
+    width: calc(100% - 32px);
+  }
+}
