@@ -10,3 +10,15 @@
   justify-content: flex-end;
   align-items: flex-start;
 }
+
+@media (max-width: 1024px) {
+  .result-card__image {
+    height: 211px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-card__image {
+    height: 150px;
+  }
+}

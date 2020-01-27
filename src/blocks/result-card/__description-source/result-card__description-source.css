@@ -12,3 +12,17 @@
   bottom: 24px;
   margin: 0px;
 }
+
+@media (max-width: 1024px) {
+  .result-card__description-source {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-card__description-source {
+    left: 16px;
+    bottom: 16px;
+  }
+}

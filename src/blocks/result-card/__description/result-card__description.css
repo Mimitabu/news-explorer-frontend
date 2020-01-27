@@ -3,3 +3,17 @@
   margin: 0px auto;
   height: 304px;
 }
+
+@media (max-width: 1024px) {
+  .result-card__description {
+    width: calc(100% - 40px);
+    height: 287px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .result-card__description {
+    width: calc(100% - 32px);
+    height: 270px;
+  }
+}

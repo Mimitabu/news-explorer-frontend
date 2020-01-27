@@ -18,3 +18,19 @@
 .results__more-button:hover {
   background: #E6E8EB;
 }
+
+@media (max-width: 1024px) {
+  .results__more-button {
+    width: 288px;
+    height: 64px;
+    margin: 39px auto 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .results__more-button {
+    width: 240px;
+    height: 56px;
+    margin: 22px auto 40px;
+  }
+}

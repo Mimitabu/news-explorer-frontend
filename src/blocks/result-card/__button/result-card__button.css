@@ -8,3 +8,15 @@
   margin: 24px 24px 0px 5px;
   display: flex;
 }
+
+@media (max-width: 1024px) {
+  .result-card__button {
+    margin: 16px 16px 0px 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-card__button {
+    margin: 8px 8px 0px 5px;
+  }
+}

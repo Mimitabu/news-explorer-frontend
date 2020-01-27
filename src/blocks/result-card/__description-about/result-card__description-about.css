@@ -5,5 +5,12 @@
   font-size: 16px;
   line-height: 22px;
   color: #1A1B22;
-  margin-bottom:
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .result-card__description-about {
+    max-height: 88px;
+    overflow: hidden;
+  }
 }
