@@ -2,7 +2,7 @@
   display: block;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1130px) {
   .result-card__button-warning_is-opened {
     display: none;
   }
