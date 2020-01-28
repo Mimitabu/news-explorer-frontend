@@ -10,12 +10,14 @@
 </head>
 <body class="body">
   <div class="page">
+
     <header class="header header_black header_authorized">
       <div class="header__items header__items_black">
         <h2 class="header__title">NewsExplorer</h2>
+        <img class="header__hide-nav" src="<%=require('./images/menu-black.svg').default%>" alt="two horizontal stripes">
         <nav class="header__nav">
-          <a href="./index.html" class="header__link header__link_black header__main">Главная</a>
-          <a href="./articles.html" class="header__link header__link_black header__saved-massages header__saved-massages_is-open">Сохранённые статьи</a>
+          <a href="./index.html" class="header__link header__link_black header__main header__main_black">Главная</a>
+          <a href="./articles.html" class="header__link header__link_black header__saved-massages header__saved-massages_black header__saved-massages_is-open">Сохранённые статьи</a>
           <div class="header__logout header__logout_black header__logout_is-opened">
             <a href="#" class="header__link header__link_black header__user-name ">Грета</a>
             <img class="header__exit" src="<%=require('./images/logout_black.svg').default%>" alt="exit logo">
