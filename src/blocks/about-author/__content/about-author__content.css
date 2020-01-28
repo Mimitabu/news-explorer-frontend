@@ -14,5 +14,14 @@
   .about-author__content {
     width: 424px;
     margin-top: 40px;
+    margin-bottom: 72px
+  }
+}
+
+@media (max-width: 680px) {
+  .about-author__content {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 80px
   }
 }

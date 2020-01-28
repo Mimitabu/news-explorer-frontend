@@ -19,3 +19,9 @@
     margin: 0px 0px 16px;
   }
 }
+
+@media (max-width: 680px) {
+  .about-author__text {
+    margin: 0px 0px 16px;
+  }
+}

@@ -1,5 +1,5 @@
 .about-author__avatar {
-  margin: 80px 56px 0px 0px;
+  margin: 80px 56px 80px 0px;
   border-radius: 1000px;
   width: 464px;
   height: 464px;
@@ -7,7 +7,7 @@
 
 @media (max-width: 1024px) {
   .about-author__avatar {
-    margin: 70px 44px 0px 0px;
+    margin: 70px 44px 70px 0px;
     width: 348px;
     height: 348px;
   }
@@ -15,8 +15,16 @@
 
 @media (max-width: 768px) {
   .about-author__avatar {
-    margin: 80px 32px 0px 0px;
+    margin: 80px 32px 80px 0px;
     width: 232px;
     height: 232px;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-author__avatar {
+    margin: 32px 8px 0px 0px;
+    width: 272px;
+    height: 272px;
   }
 }
