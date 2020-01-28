@@ -1,6 +1,8 @@
 @import url(./__items/header__items.css);
 @import url(./__items/_black/header__items_black.css);
+@import url(./__items/_mini/header__items_mini.css);
 @import url(./__nav/header__nav.css);
+@import url(./__nav/_mini/header__nav_mini.css);
 @import url(./__title/header__title.css);
 @import url(./__link/header__link.css);
 @import url(./__link/_black/header__link_black.css);
@@ -16,6 +18,8 @@
 @import url(./__login/_is-opened/header__login_is-opened.css);
 @import url(./_black/header_black.css);
 @import url(./__hide-nav/header__hide-nav.css);
+@import url(./__mini/header__mini.css);
+@import url(./__up/header__up.css);
 
 
 .header {

@@ -26,6 +26,24 @@
           </div>
       </header>
 
+      <header class="header-mini">
+        <div class="header-mini__items">
+          <div class="header-mini__up">
+            <h2 class="header-mini__title">NewsExplorer</h2>
+            <img class="header-mini__hide-nav" src="<%=require('./images/close-mid.svg').default%>" alt="close icon">
+          </div>
+          <nav class="header-mini__nav">
+            <a href="./index.html" class="header-mini__link header-mini__main">Главная</a>
+            <a href="./articles.html" class="header-mini__link header-mini__saved-massages header-mini__saved-massages_is-opened">Сохранённые статьи</a>
+            <div class="header-mini__logout header-mini__logout_is-opened">
+              <a href="#" class="header-mini__link header-mini__user-name">Грета</a>
+              <img class="header-mini__exit" src="<%=require('./images/logout.svg').default%>" alt="exit logo">
+            </div>
+            <a href="#" class="header-mini__link header-mini__login">Авторизоваться</a>
+          </nav>
+        </div>
+      </header>
+
       <section class="search">
         <div class="search__elements">
           <h2 class="search__title">Что в мире творится?</h2>
@@ -139,7 +157,7 @@
           placeholder="Введите почту">
           <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
-          <input required type="password" name="password" class="popup__input popup__input_signin-password" placeholder="Введите пароль">
+          <input required type="password" name="password" class="popup__input popup__input_signin-password" placeholder="Введите пароль" minlength="6">
           <span class="popup__error-message popup__error-password"></span>
           <button disabled class="popup__button popup__button_signin popup__button_disabled">Войти
           </button>
@@ -158,10 +176,10 @@
           placeholder="Введите почту">
           <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
-          <input required type="password" name="password" class="popup__input popup__input_signup-password" placeholder="Введите пароль">
+          <input required type="password" name="password" class="popup__input popup__input_signup-password" placeholder="Введите пароль" minlength="6">
           <span class="popup__error-message popup__error-password"></span>
           <span class="popup__span-name">Имя</span>
-          <input required type="text" name="password" class="popup__input popup__input_signup-name" placeholder="Введите своё имя">
+          <input required type="text" name="name" class="popup__input popup__input_signup-name" placeholder="Введите своё имя">
           <span class="popup__error-message popup__error-name"></span>
           <span class="popup__error-message popup__error-user"></span>
           <button disabled class="popup__button popup__button_signup popup__button_disabled">Зарегистрироваться
@@ -175,7 +193,7 @@
       <div class="popup__content popup__content_successful-signup">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
         <h3 class="popup__title popup__title_successful-signup">Пользователь успешно        зарегистрирован!</h3>
-        <a href="#" class="popup__link"><span> Выполнить вход</span></a>
+        <p class="popup__link popup__sign-in"> Выполнить вход</p>
       </div>
     </div>
 

@@ -17,4 +17,6 @@
 @import url(./blocks/no-results/no-results.css);
 @import url(./blocks/no-results/_is-opened/no-results_is-opened.css);
 @import url(./blocks/favorites/favorites.css);
+@import url(./blocks/header-mini/header-mini.css);
+@import url(./blocks/header-mini/_is-opened/header-mini_is-opened.css);
 

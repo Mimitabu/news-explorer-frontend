@@ -7,8 +7,9 @@
   margin: 0px;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 425px) {
     .header__title {
-
+      font-size: 16px;
+      line-height: 24px;
     }
-}
+}*/

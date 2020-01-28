@@ -1,0 +1,28 @@
+@import url(./__items/header-mini__items.css);
+@import url(./__up/header-mini__up.css);
+@import url(./__title/header-mini__title.css);
+@import url(./__nav/header-mini__nav.css);
+@import url(./__hide-nav/header-mini__hide-nav.css);
+@import url(./__link/header-mini__link.css);
+@import url(./__main/header-mini__main.css);
+@import url(./__saved-massages/header-mini__saved-massages.css);
+@import url(./__saved-massages/_is-opened/header-mini__saved-massages_is-opened.css);
+@import url(./__logout/header-mini__logout.css);
+@import url(./__logout/_is-opened/header-mini__logout_is-opened.css);
+@import url(./__user-name/header-mini__user-name.css);
+@import url(./__login/header-mini__login.css);
+@import url(./__login/_is-opened/header-mini__login_is-opened.css);
+@import url(./_is-opened/header-mini_is-opened.css);
+
+.header-mini {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  align-items: flex-start;
+  justify-content: center;
+  display: none;
+  z-index: 10;
+}

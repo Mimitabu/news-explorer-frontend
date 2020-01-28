@@ -1,0 +1,9 @@
+.header-mini__up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0px 16px;
+  border-bottom: solid 2px rgba(196, 196, 196, 0.1);
+  align-items: center;
+}

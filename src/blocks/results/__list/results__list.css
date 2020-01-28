@@ -55,8 +55,3 @@
   }
 }
 
-@media (max-width: 617px) {
-  .results__list {
-    padding: 0px;
-  }
-}
