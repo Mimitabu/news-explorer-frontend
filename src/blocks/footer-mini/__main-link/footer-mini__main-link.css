@@ -1,0 +1,12 @@
+.footer-mini__main-link {
+  color: #1A1B22;
+  text-decoration: none;
+}
+
+.footer-mini__main-link:nth-child(1){
+  margin-bottom: 12px;
+}
+
+.footer-mini__main-link:nth-child(2){
+  margin-bottom: 24px;
+}

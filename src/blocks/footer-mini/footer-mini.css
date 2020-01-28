@@ -1,0 +1,16 @@
+@import url(./__content/footer-mini__content.css);
+@import url(./__main-links/footer-mini__main-links.css);
+@import url(./__main-link/footer-mini__main-link.css);
+
+
+.footer-mini {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .footer-mini {
+    display: flex;
+    margin: 20px 16px;
+    flex-direction: column;
+  }
+}

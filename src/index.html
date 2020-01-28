@@ -147,14 +147,33 @@
         </div>
       </div>
     </footer>
+
+    <footer class="footer-mini">
+      <div class="footer-mini__content">
+        <div class="footer-mini__main-links">
+          <a href="./index.html" class="footer-mini__main-link">Главная</a>
+          <a href="https://praktikum.yandex.ru" class="footer-mini__main-link" target="_blank">Яндекс.Практикум</a>
+        </div>
+        <div class="footer__social-links">
+          <a href="https://github.com/Mimitabu" class="footer__social-link" target="_blank">
+            <img class="footer__img" src="<%=require('./images/githab.svg').default%>" alt="Githab link">
+          </a>
+          <a href="https://www.facebook.com/marie.slavina" class="footer__social-link" target="_blank">
+            <img class="footer__img" src="<%=require('./images/facebook.svg').default%>" alt="Facebook link">
+          </a>
+        </div>
+      </div>
+      <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
+    </footer>
+
     <div class="popup popup__signin">
       <div class="popup__content">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin">
           <span class="popup__span-name">Email</span>
-          <input required type="email" name="email" class="popup__input popup__input_signin-email"
-          placeholder="Введите почту">
+          <input required type="email" name="email" class="popup__input popup__input_signin-email" placeholder="Введите почту"
+          pattern="^(\w{2,})((-?\.?\w+)+)?@(\w{2,})\.(\w{2,})((\.\w+)+)?$">
           <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
           <input required type="password" name="password" class="popup__input popup__input_signin-password" placeholder="Введите пароль" minlength="6">
@@ -172,14 +191,14 @@
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup">
           <span class="popup__span-name">Email</span>
-          <input required type="email" name="email" class="popup__input popup__input_signup-email"
-          placeholder="Введите почту">
+          <input required type="email" name="email" class="popup__input popup__input_signup-email" placeholder="Введите почту"
+          pattern="^(\w{2,})((-?\.?\w+)+)?@(\w{2,})\.(\w{2,})((\.\w+)+)?$">
           <span class="popup__error-message popup__error-email"></span>
           <span class="popup__span-name">Пароль</span>
           <input required type="password" name="password" class="popup__input popup__input_signup-password" placeholder="Введите пароль" minlength="6">
           <span class="popup__error-message popup__error-password"></span>
           <span class="popup__span-name">Имя</span>
-          <input required type="text" name="name" class="popup__input popup__input_signup-name" placeholder="Введите своё имя">
+          <input required type="text" name="name" class="popup__input popup__input_signup-name" placeholder="Введите своё имя" minlength="2" maxlength="12">
           <span class="popup__error-message popup__error-name"></span>
           <span class="popup__error-message popup__error-user"></span>
           <button disabled class="popup__button popup__button_signup popup__button_disabled">Зарегистрироваться
