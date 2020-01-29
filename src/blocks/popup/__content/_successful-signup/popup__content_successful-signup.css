@@ -1,3 +1,4 @@
 .popup__content_successful-signup {
   min-height: 182px;
+  cursor: default;
 }

@@ -18,15 +18,15 @@
             <a href="./index.html" class="header__link header__main">Главная</a>
             <a href="./articles.html" class="header__link header__saved-massages header__saved-massages_is-open">Сохранённые статьи</a>
             <div class="header__logout header__logout_is-opened">
-              <a href="#" class="header__link header__user-name ">Грета</a>
+              <span class="header__link header__user-name ">Грета</span>
               <img class="header__exit" src="<%=require('./images/logout.svg').default%>" alt="exit logo">
             </div>
-            <a href="#" class="header__link header__login">Авторизоваться</a>
+            <span class="header__link header__login">Авторизоваться</span>
           </nav>
           </div>
       </header>
 
-      <header class="header-mini header-mini_is-opened">
+      <header class="header-mini">
         <div class="header-mini__items">
           <div class="header-mini__up">
             <h2 class="header-mini__title">NewsExplorer</h2>
@@ -36,10 +36,10 @@
             <a href="./index.html" class="header-mini__link header-mini__main">Главная</a>
             <a href="./articles.html" class="header-mini__link header-mini__saved-massages header-mini__saved-massages_is-opened">Сохранённые статьи</a>
             <div class="header-mini__logout header-mini__logout_is-opened">
-              <a href="#" class="header-mini__link header-mini__user-name">Грета</a>
+              <span class="header-mini__link header-mini__user-name">Грета</span>
               <img class="header-mini__exit" src="<%=require('./images/logout.svg').default%>" alt="exit logo">
             </div>
-            <a href="#" class="header-mini__link header-mini__login">Авторизоваться</a>
+            <span class="header-mini__link header-mini__login">Авторизоваться</span>
           </nav>
         </div>
       </header>
@@ -168,7 +168,7 @@
 
     <div class="popup popup__signin">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="signin">
           <span class="popup__span-name">Email</span>
@@ -187,7 +187,7 @@
 
     <div class="popup popup__signup">
       <div class="popup__content">
-        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup" alt="close icon">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="signup">
           <span class="popup__span-name">Email</span>
@@ -210,9 +210,9 @@
 
     <div class="popup popup__successful-signup">
       <div class="popup__content popup__content_successful-signup">
-        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
         <h3 class="popup__title popup__title_successful-signup">Пользователь успешно        зарегистрирован!</h3>
-        <p class="popup__link popup__sign-in"> Выполнить вход</p>
+        <p class=" popup__link popup__sign-in"> Выполнить вход</p>
       </div>
     </div>
 

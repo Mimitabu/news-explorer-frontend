@@ -9,6 +9,7 @@
 @import url(./__button/_disabled/popup__button_disabled.css);
 @import url(./__span-link/popup__span-link.css);
 @import url(./__link/popup__link.css);
+@import url(./__sign-in/popup__sign-in.css);
 @import url(./__error-message/popup__error-message.css);
 @import url(./__content/_successful-signup/popup__content_successful-signup.css);
 @import url(./__title/_successful-signup/popup__title_successful-signup.css);

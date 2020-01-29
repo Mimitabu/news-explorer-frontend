@@ -24,5 +24,13 @@
 @media (max-width: 680px) {
   .search__subtitle {;
      margin: 0px 0px 122px;
+     max-width: 680px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search__subtitle {;
+     margin: 0px 0px 122px;
+     max-width: 320px;
   }
 }

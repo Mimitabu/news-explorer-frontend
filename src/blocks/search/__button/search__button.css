@@ -7,6 +7,11 @@
   border: solid 1px #2F71E5;
   color: #FFFFFF;
   cursor: pointer;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .search__button:hover {

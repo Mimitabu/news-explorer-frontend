@@ -1,9 +1,9 @@
-.popup__span-name {
+.popup__sign-in {
   font-family: 'Inter';
   font-style: normal;
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 18px;
+  line-height: 22px;
   color: #2F71E5;
-  margin-bottom: 9px;
+  cursor: pointer;
 }

@@ -49,7 +49,7 @@
 
 @media (max-width: 767px) {
   .results__list {
-    grid-template-columns: repeat(auto-fill,288px);
+    grid-template-columns: repeat(auto-fill,280px);
     grid-gap: 10px 10px;
     width: calc(100% - 32px);
   }
