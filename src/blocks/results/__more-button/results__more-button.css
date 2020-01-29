@@ -13,6 +13,7 @@
   width: 288px;
   height: 64px;
   margin: 56px auto 80px;
+  cursor: pointer;
 }
 
 .results__more-button:hover {

@@ -4,13 +4,13 @@
   border-radius: 10px;
   font-family: 'Roboto';
   font-style: normal;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 10px;
   line-height: 12px;
   color: #000000;
   text-align: center;
   display: none;
-  padding: 16px 12px 12px;
+  padding: 14px 12px 12px;
   margin-top: 24px;
 }
 
