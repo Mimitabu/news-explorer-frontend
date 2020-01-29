@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "build": "rimraf dist && webpack --mode production",
     "dev": "webpack-dev-server --mode development --open --watch"
   },
@@ -16,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Mimitabu/news-explorer-frontend/issues"
   },
-  "homepage": "https://github.com/Mimitabu/news-explorer-frontend#readme",
+  "homepage": "https://github.com/Mimitabu/news-explorer-frontend",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.1",
@@ -35,6 +36,7 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
+    "gh-pages": "~2.2.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-loader": "^3.0.0",
