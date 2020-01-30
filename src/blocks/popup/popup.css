@@ -13,6 +13,7 @@
 @import url(./__error-message/popup__error-message.css);
 @import url(./__content/_successful-signup/popup__content_successful-signup.css);
 @import url(./__title/_successful-signup/popup__title_successful-signup.css);
+@import url(./__title-site/popup__title-site.css);
 
 .popup {
   position: fixed;
@@ -29,14 +30,13 @@
 @media (max-width: 425px) {
   .popup {
   position: fixed;
-  top: 56px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF;;
+  background-image: url(../../images/main-mobile.jpg);
+  background-size: cover;
   align-items: flex-start;
   justify-content: center;
-  display: none;
-  border-radius: 16px;
   }
 }

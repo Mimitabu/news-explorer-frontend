@@ -29,3 +29,11 @@
     background-size: cover;
   }
 }
+
+@media (max-width: 425px) {
+  .header-search-page {
+    background-image: url(../../images/main-mobile.jpg);
+    max-height: 536px;
+    background-size: cover;
+  }
+}
