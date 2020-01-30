@@ -166,7 +166,7 @@
       <p class="footer__copyright">&#169; 2020 Supersite, Powered by News API</p>
     </footer>
 
-    <div class="popup popup__signin popup_is-opened">
+    <div class="popup popup__signin">
       <h3 class="popup__title-site">NewsExplorer</h3>
       <div class="popup__content">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
@@ -187,6 +187,7 @@
     </div>
 
     <div class="popup popup__signup">
+      <h3 class="popup__title-site">NewsExplorer</h3>
       <div class="popup__content">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup" alt="close icon">
         <h3 class="popup__title">Регистрация</h3>
@@ -210,6 +211,7 @@
     </div>
 
     <div class="popup popup__successful-signup">
+      <h3 class="popup__title-site">NewsExplorer</h3>
       <div class="popup__content popup__content_successful-signup">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
         <h3 class="popup__title popup__title_successful-signup">Пользователь успешно        зарегистрирован!</h3>
@@ -217,10 +219,7 @@
       </div>
     </div>
 
-
-
-
   </div>
-      <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
