@@ -1971,7 +1971,8 @@ template {
   max-width: 356px;
 }
 .no-results__image {
-    
+  width: 96px;
+  height: 96px;
 }
 .no-results_is-opened {
   display: flex;
@@ -1982,6 +1983,7 @@ template {
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: auto;
   background-color: #F5F6F7;
 }
