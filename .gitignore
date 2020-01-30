@@ -11,10 +11,11 @@ node_modules
 
 # # Optional REPL history
 .DS_Store
+Thumbs.db
 .idea
-.env
 .sublime
 .vscode
 
 dist
+.env
 

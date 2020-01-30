@@ -6,6 +6,8 @@
   box-sizing: border-box;
   border-radius: 100px;
   outline: none;
+  border: none;
+  padding: 0px;
 }
 
 .search__input::placeholder {

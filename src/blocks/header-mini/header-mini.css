@@ -13,6 +13,7 @@
 @import url(./__login/header-mini__login.css);
 @import url(./__login/_is-opened/header-mini__login_is-opened.css);
 @import url(./_is-opened/header-mini_is-opened.css);
+@import url(./__exit/header-mini__exit.css);
 
 .header-mini {
   position: fixed;
