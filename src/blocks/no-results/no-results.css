@@ -9,6 +9,7 @@
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: auto;
   background-color: #F5F6F7;
 }
