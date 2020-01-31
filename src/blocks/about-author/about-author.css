@@ -8,20 +8,17 @@
   flex-direction: row;
   width: calc(100% - 208px);
   margin: auto;
-/*  height: 624px;*/
 }
 
 @media (max-width: 1024px) {
   .about-author {
     width: calc(100% - 144px);
-/*    height: 489px;*/
   }
 }
 
 @media (max-width: 768px) {
   .about-author {
     width: calc(100% - 80px);
-/*    height: 354px;*/
   }
 }
 
@@ -29,7 +26,6 @@
   .about-author {
     width: calc(100% - 32px);
     flex-direction: column;
-/*    min-height: 500px;*/
     justify-content: center;
     align-items: center;
   }

@@ -13,7 +13,7 @@
 .search__input::placeholder {
   color: #B6BCBF;
   padding: 24px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

@@ -11,7 +11,7 @@
 }
 
 .popup__input::placeholder {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

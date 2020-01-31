@@ -1,5 +1,5 @@
 .header__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -7,9 +7,3 @@
   margin: 0px;
 }
 
-/*@media (max-width: 425px) {
-    .header__title {
-      font-size: 16px;
-      line-height: 24px;
-    }
-}*/
