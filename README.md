@@ -10,6 +10,8 @@ https://github.com/Mimitabu/news-explorer-api/tree/level_1
 
 https://mimitabu.github.io/news-explorer-frontend/index
 
+http://news-explorer.pw
+
 
 `Сервис с авторизацией, в котором можно найти новости по запросу и сохранить в личном кабинете`
 
