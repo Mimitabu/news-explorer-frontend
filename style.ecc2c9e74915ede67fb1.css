@@ -518,7 +518,7 @@ template {
   }
 }
 .header__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
@@ -526,15 +526,10 @@ template {
   margin: 0px;
 }
 
-/*@media (max-width: 425px) {
-    .header__title {
-      font-size: 16px;
-      line-height: 24px;
-    }
-}*/
+
 .header__link {
   text-decoration: none;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -727,7 +722,7 @@ template {
   }
 }
 .search__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 60px;
@@ -762,7 +757,7 @@ template {
   }
 }
 .search__subtitle {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -812,7 +807,7 @@ template {
 .search__input::placeholder {
   color: #B6BCBF;
   padding: 24px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -884,7 +879,7 @@ template {
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1024,7 +1019,7 @@ template {
   }
 }
 .about-author__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
@@ -1051,7 +1046,7 @@ template {
 
 
 .about-author__text {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1078,20 +1073,17 @@ template {
   flex-direction: row;
   width: calc(100% - 208px);
   margin: auto;
-/*  height: 624px;*/
 }
 
 @media (max-width: 1024px) {
   .about-author {
     width: calc(100% - 144px);
-/*    height: 489px;*/
   }
 }
 
 @media (max-width: 768px) {
   .about-author {
     width: calc(100% - 80px);
-/*    height: 354px;*/
   }
 }
 
@@ -1099,7 +1091,6 @@ template {
   .about-author {
     width: calc(100% - 32px);
     flex-direction: column;
-/*    min-height: 500px;*/
     justify-content: center;
     align-items: center;
   }
@@ -1125,7 +1116,7 @@ template {
   }
 }
 .footer__copyright {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1134,7 +1125,7 @@ template {
   margin: 0px;
 }
 .footer__main-link {
-  font-family: Roboto;
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1228,7 +1219,7 @@ template {
 }
 .popup__title {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -1241,7 +1232,7 @@ template {
   margin-top: 22px;
 }
 .popup__span-name {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -1262,7 +1253,7 @@ template {
 }
 
 .popup__input::placeholder {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1291,7 +1282,7 @@ template {
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   border-radius: 100px;
   color: #FFFFFF;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1310,7 +1301,7 @@ template {
   cursor: default;
 }
 .popup__span-link {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1325,7 +1316,7 @@ template {
   color: #2F71E5;
 }
 .popup__sign-in {
-  font-family: 'Inter';
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1334,7 +1325,7 @@ template {
   cursor: pointer;
 }
 .popup__error-message {
-  font-family: Inter;
+  font-family: 'Inter', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -1349,7 +1340,7 @@ template {
   margin-bottom: 14px;
 }
 .popup__title-site {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -1403,7 +1394,7 @@ template {
   }
 }
 .results__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
@@ -1524,7 +1515,7 @@ template {
 .results__more-button {
   background: #FFFFFF;
   border-radius: 80px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1638,7 +1629,7 @@ template {
   width: calc(100% - 48px);
   margin: 0px auto;
   height: 304px;
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1694,7 +1685,7 @@ template {
   background-image: url(./images/trash_hover.svg);
 }
 .result-card__description-data {
-  font-family: 'Source Sans Pro';
+  font-family: 'Source Sans Pro', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1703,7 +1694,7 @@ template {
   margin: 0px;
 }
 .result-card__description-title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -1746,7 +1737,7 @@ template {
   }
 }
 .result-card__description-about {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1777,7 +1768,7 @@ template {
   }
 }
 .result-card__description-source {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -1808,7 +1799,7 @@ template {
   background-color: #FFFFFF;
   box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
   border-radius: 10px;
-  font-family: 'Roboto';
+  font-family: 'Roboto','Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 10px;
@@ -1844,7 +1835,7 @@ template {
 .result-card__key-word {
   background-color: #FFFFFF;
   border-radius: 10px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1922,7 +1913,7 @@ template {
   }
 }
 .news-search__text {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1950,7 +1941,7 @@ template {
   display: flex;
 }
 .no-results__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -1960,7 +1951,7 @@ template {
   margin: 40px 0px 16px;
 }
 .no-results__text {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -1991,7 +1982,7 @@ template {
   display: flex;
 }
 .favorites__text {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -2011,7 +2002,7 @@ template {
   }
 }
 .favorites__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
@@ -2037,7 +2028,7 @@ template {
   }
 }
 .favorites__key-words {
-  font-family: 'Roboto';
+  font-family: 'Roboto' 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -2098,7 +2089,7 @@ template {
   align-items: center;
 }
 .header-mini__title {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -2115,7 +2106,7 @@ template {
 
 }
 .header-mini__link {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -2190,7 +2181,7 @@ template {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Verdana';
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
