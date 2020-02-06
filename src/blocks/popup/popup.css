@@ -14,6 +14,8 @@
 @import url(./__content/_successful-signup/popup__content_successful-signup.css);
 @import url(./__title/_successful-signup/popup__title_successful-signup.css);
 @import url(./__title-site/popup__title-site.css);
+@import url(./__content/_is-opened/popup__content_is-opened.css);
+@import url(./__form/_is-opened/popup__form_is-opened.css);
 
 .popup {
   position: fixed;

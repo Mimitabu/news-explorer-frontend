@@ -168,10 +168,11 @@
 
     <div class="popup popup__signin">
       <h3 class="popup__title-site">NewsExplorer</h3>
-      <div class="popup__content">
+
+      <div class="popup__content popup__content-signin">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" name="signin">
+        <form class="popup__form popup__form_is-opened" name="signin">
           <span class="popup__span-name">Email</span>
           <input required type="email" name="email" class="popup__input popup__input_signin-email" placeholder="Введите почту"
           pattern="^(\w{2,})((-?\.?\w+)+)?@(\w{2,})\.(\w{2,})((\.\w+)+)?$">
@@ -184,14 +185,11 @@
           <span class="popup__span-link">или<span class="popup__link popup__link-signup"> Зарегистрироваться</span></span>
         </form>
       </div>
-    </div>
 
-    <div class="popup popup__signup">
-      <h3 class="popup__title-site">NewsExplorer</h3>
-      <div class="popup__content">
+      <div class="popup__content popup__content-signup">
         <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signup" alt="close icon">
         <h3 class="popup__title">Регистрация</h3>
-        <form class="popup__form" name="signup">
+        <form class="popup__form popup__form_is-opened" name="signup">
           <span class="popup__span-name">Email</span>
           <input required type="email" name="email" class="popup__input popup__input_signup-email" placeholder="Введите почту"
           pattern="^(\w{2,})((-?\.?\w+)+)?@(\w{2,})\.(\w{2,})((\.\w+)+)?$">
@@ -205,19 +203,26 @@
           <span class="popup__error-message popup__error-user"></span>
           <button disabled class="popup__button popup__button_signup popup__button_disabled">Зарегистрироваться
           </button>
-          <span class="popup__span-link">или<span class="popup__link"> Войти</span></span>
+          <span class="popup__span-link">или<span class="popup__link popup__link-signin"> Войти</span></span>
         </form>
       </div>
-    </div>
 
-    <div class="popup popup__successful-signup">
-      <h3 class="popup__title-site">NewsExplorer</h3>
       <div class="popup__content popup__content_successful-signup">
-        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_signin" alt="close icon">
+        <img src="<%=require('./images/close.svg').default%>" class="popup__close popup__close_successful-signup" alt="close icon">
         <h3 class="popup__title popup__title_successful-signup">Пользователь успешно        зарегистрирован!</h3>
         <p class=" popup__link popup__sign-in"> Выполнить вход</p>
       </div>
     </div>
+
+<!--     <div class="popup popup__signup">
+      <h3 class="popup__title-site">NewsExplorer</h3>
+
+    </div>
+
+    <div class="popup popup__successful-signup">
+      <h3 class="popup__title-site">NewsExplorer</h3>
+
+    </div> -->
 
   </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

@@ -1,38 +1,55 @@
 import './style.css';
+import Popup from './js/components/Popup';
+import Form from './js/components/Form';
+import Button from './js/components/Button';
 
-const page = document.querySelector('.page');
-const loginButton = page.querySelector('.header__login');
-const popupCloseButton = page.querySelector('.popup__close');
-const popUpForm = page.querySelector('.popup');
-const headerMiniOpenButton = page.querySelector('.header__hide-nav');
-const headerMiniCloseButton = page.querySelector('.header-mini__hide-nav');
-const headerMini = page.querySelector('.header-mini');
-const popUpFormSignup = page.querySelector('.popup__signup');
-const popupSignupButton = page.querySelector('.popup__link-signup');
+const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
+const closePopupButonUp = new Button(document.querySelector('.popup__close_signup'));
+const closePopupButonSaccsess = new Button(document.querySelector('.popup__close_successful-signup'));
 
-function openForm() {
-  popUpForm.classList.add('popup_is-opened');
+const loginButton = new Button(document.querySelector('.header__login'));
+const signupButton = new Button(document.querySelector('.popup__link-signup'));
+const signinButton = new Button(document.querySelector('.popup__link-signin'));
+
+const formSignin = new Form(document.forms.signin);
+const formSignup = new Form(document.forms.signup);
+
+const contentSignin = document.querySelector('.popup__content-signin');
+const contentSignup = document.querySelector('.popup__content-signup');
+
+
+// const popupSignin = new Popup(document.querySelector('.popup__signin'));
+// const popupSignup = new Popup(document.querySelector('.popup__signup'));
+// const popupSuccessSignup = new Popup(document.querySelector('.popup__successful-signup'));
+
+const popup = new Popup(document.querySelector('.popup'));
+
+
+function openFormSignin(event) {
+  popup.open();
+  popup.clearContent('.popup__content-signup');
+  popup.clearContent('.popup__content_successful-signup');
+  popup.setContent('.popup__content-signin');
 }
 
-function openFormSignup() {
-  popUpForm.classList.remove('popup_is-opened');
-  popUpFormSignup.classList.add('popup_is-opened');
+function openFormSignup(event) {
+  popup.clearContent('.popup__content-signin');
+  popup.setContent('.popup__content-signup');
+}
+
+function openFormSuccessSignup() {
+  popup.clearContent('.popup__content-signup');
+  popup.clearContent('.popup__content_signin');
+  popup.setContent('..popup__content_successful-signup');
 }
 
 function closeForm() {
-  popUpForm.classList.remove('popup_is-opened');
+  popup.close();
 }
 
-function openHeaderMini() {
-  headerMini.classList.add('header-mini_is-opened');
-}
-
-function closeHeaderMini() {
-  headerMini.classList.remove('header-mini_is-opened');
-}
-
-loginButton.addEventListener('click', openForm);
-popupCloseButton.addEventListener('click', closeForm);
-headerMiniOpenButton.addEventListener('click', openHeaderMini);
-headerMiniCloseButton.addEventListener('click', closeHeaderMini);
-popupSignupButton.addEventListener('click', openFormSignup);
+loginButton.addEventListener('click', openFormSignin);
+closePopupButonIn.addEventListener('click', closeForm);
+closePopupButonUp.addEventListener('click', closeForm);
+closePopupButonSaccsess.addEventListener('click', closeForm);
+signupButton.addEventListener('click', openFormSignup);
+signinButton.addEventListener('click', openFormSignin);
