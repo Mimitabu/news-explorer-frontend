@@ -11,8 +11,8 @@ const loginButton = new Button(document.querySelector('.header__login'));
 const signupButton = new Button(document.querySelector('.popup__link-signup'));
 const signinButton = new Button(document.querySelector('.popup__link-signin'));
 
-const formSignin = new Form(document.forms.signin);
-const formSignup = new Form(document.forms.signup);
+// const formSignin = document.forms.signin;
+// const formSignup = document.forms.signup;
 
 const contentSignin = document.querySelector('.popup__content-signin');
 const contentSignup = document.querySelector('.popup__content-signup');
@@ -25,14 +25,15 @@ const contentSignup = document.querySelector('.popup__content-signup');
 const popup = new Popup(document.querySelector('.popup'));
 
 
-function openFormSignin(event) {
+function openFormSignin() {
   popup.open();
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_successful-signup');
   popup.setContent('.popup__content-signin');
+  const formSignin = new Form(document.forms.signin, document.forms.signin.elements.email);
 }
 
-function openFormSignup(event) {
+function openFormSignup() {
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
 }
