@@ -1,24 +1,16 @@
 import validator from 'validator';
 
 export default class Form {
-  constructor(domElement, email) {
+  constructor(domElement) {
     this.domElement = domElement;
-    // this._validateInputElement = this._validateInputElement.bind(this);
     this._validateForm = this._validateForm.bind(this);
+    this._clearErrors();
+    this._clear();
     this.domElement
       .addEventListener('input', this._validateForm);
-
-    this.domElement
-      .addEventListener('input', this._validateLenghtPassword);
-    // this.domElement
-    //   .addEventListener('input', this._validateLenghtName);
-    // this._validateInputElement = this._validateInputElement.bind(this);
-
-
   }
 
   setServerError(){
-
   }
 
   _validateInputElement(str) {
@@ -35,37 +27,18 @@ export default class Form {
     return false;
   }
 
-  _validateLenghtPassword() {
-    if (this.elements.password.value.length === 0) {
-      this
+  _validatePassword(str) {
+    if (str.value.length === 0) {
+      this.domElement
         .querySelector('.popup__error-password')
         .textContent = 'Это обязательное поле';
-    } else if (this.elements.password.value.length < 6) {
-      this
+    } else if (str.value.length < 6) {
+      this.domElement
         .querySelector('.popup__error-password')
         .textContent = 'Длина пароля должна быть не меньше 6 символов';
     } else {
-      this
+      this.domElement
         .querySelector('.popup__error-password')
-        .textContent = '';
-      return true;
-    }
-    return false;
-  }
-
-  _validateLenghtName() {
-    if (this.elements.name.value.length === 0) {
-      this
-        .querySelector('.popup__error-name')
-        .textContent = 'Это обязательное поле';
-    } else if (this.elements.password.value.length < 2 ||
-      this.elements.password.value.length > 30) {
-      this
-        .querySelector('.popup__error-name')
-        .textContent = 'Длина имени должна быть от 2 до 30 символов';
-    } else {
-      this
-        .querySelector('.popup__error-name')
         .textContent = '';
       return true;
     }
@@ -73,17 +46,38 @@ export default class Form {
   }
 
   _validateForm() {
-    this._validateInputElement(this.domElement.email);
-    console.log(this);
+    const inputEmail = this._validateInputElement(this.domElement.email);
+    const inputPassword = this._validatePassword(this.domElement.password);
+    this._buttonDisabled();
+
+    if (inputEmail && inputPassword) {
+      this.domElement.querySelector('.popup__button')
+        .classList.remove('popup__button_disabled');
+      this.domElement.querySelector('.popup__button').removeAttribute('disabled');
+    } else {
+      this._buttonDisabled();
+    }
   }
 
-  _clear() {
-    this
+  _clearErrors() {
+    this.domElement
       .querySelector('.popup__error-email')
+      .textContent = '';
+    this.domElement
+      .querySelector('.popup__error-password')
       .textContent = '';
   }
 
-  _getInfo() {
+  _clear() {
+    this.domElement.email.value = '';
+    this.domElement.password.value = '';
+  }
 
+  _buttonDisabled() {
+    this.domElement.querySelector('.popup__button')
+      .classList.add('popup__button_disabled');
+    this.domElement.querySelector('.popup__button').setAttribute('disabled', true);
+  }
+  _getInfo() {
   }
 }

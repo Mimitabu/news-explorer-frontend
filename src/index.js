@@ -1,6 +1,7 @@
 import './style.css';
 import Popup from './js/components/Popup';
 import Form from './js/components/Form';
+import FormExtend from './js/components/FormExtend';
 import Button from './js/components/Button';
 
 const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
@@ -30,12 +31,13 @@ function openFormSignin() {
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_successful-signup');
   popup.setContent('.popup__content-signin');
-  const formSignin = new Form(document.forms.signin, document.forms.signin.elements.email);
+  const formSignin = new Form(document.forms.signin);
 }
 
 function openFormSignup() {
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
+  const formSignup = new FormExtend(document.forms.signup);
 }
 
 function openFormSuccessSignup() {
