@@ -1,25 +1,27 @@
 // класс для взаимодействия с news-explorer-api
 export default class MainApi {
-  constructor(baseUrl, headers) {
+  constructor(baseUrl) {
     this.baseUrl = baseUrl;
-    this.headers = headers;
   }
 
   // регистрирует нового пользователя
   signup(userEmail, userPassword, userName) {
     return fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
+      // headers: {
+      //   'Content-Type': 'application/json',
+      // },
       body: JSON.stringify({
         email: userEmail,
         password: userPassword,
         name: userName,
       }),
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
-          return res.json();
+          res.json();
         }
-        return Promise.reject(res.status);
+        return Promise.reject(res.statusText);
       });
   }
 
@@ -49,7 +51,7 @@ export default class MainApi {
         authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
           return res.json();
         }
@@ -91,7 +93,7 @@ export default class MainApi {
         authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
           return res.json();
         }
@@ -107,7 +109,7 @@ export default class MainApi {
         authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     })
-      .then(res => {
+      .then((res) => {
         if (res.ok) {
           return res.json();
         }

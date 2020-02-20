@@ -1,58 +1,80 @@
 import './style.css';
-import Popup from './js/components/Popup';
-import Form from './js/components/Form';
-import FormExtend from './js/components/FormExtend';
-import Button from './js/components/Button';
 
-const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
-const closePopupButonUp = new Button(document.querySelector('.popup__close_signup'));
-const closePopupButonSaccsess = new Button(document.querySelector('.popup__close_successful-signup'));
 
-const loginButton = new Button(document.querySelector('.header__login'));
-const signupButton = new Button(document.querySelector('.popup__link-signup'));
-const signinButton = new Button(document.querySelector('.popup__link-signin'));
+import {
+  closePopupButonIn,
+  closePopupButonUp,
+  closePopupButonSaccsess,
+  loginButton,
+  signupButton,
+  signinButton,
+  popup,
+  mainApi,
+  formSignin,
+  formSignup,
+  popupButtonSignup,
+} from './js/constants/constants';
 
-// const formSignin = document.forms.signin;
-// const formSignup = document.forms.signup;
+import {
+  closeForm,
+} from './js/utils/utils';
 
-const contentSignin = document.querySelector('.popup__content-signin');
-const contentSignup = document.querySelector('.popup__content-signup');
+
+const formDOMSignin = document.forms.signin;
+const formDOMSignup = document.forms.signup;
+
+// const contentSignin = document.querySelector('.popup__content-signin');
+// const contentSignup = document.querySelector('.popup__content-signup');
 
 
 // const popupSignin = new Popup(document.querySelector('.popup__signin'));
 // const popupSignup = new Popup(document.querySelector('.popup__signup'));
 // const popupSuccessSignup = new Popup(document.querySelector('.popup__successful-signup'));
 
-const popup = new Popup(document.querySelector('.popup'));
 
-
+// открытие попапа входа
 function openFormSignin() {
   popup.open();
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_successful-signup');
   popup.setContent('.popup__content-signin');
-  const formSignin = new Form(document.forms.signin);
 }
 
+// открытие попапа регистрации
 function openFormSignup() {
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
-  const formSignup = new FormExtend(document.forms.signup);
 }
 
+
+
+// открытие попапа успешной регистрации
 function openFormSuccessSignup() {
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_signin');
-  popup.setContent('..popup__content_successful-signup');
+  popup.setContent('.popup__content_successful-signup');
 }
 
-function closeForm() {
-  popup.close();
+function signup(event) {
+  event.preventDefault();
+  const email = formDOMSignup.elements.email.value;
+  const password = formDOMSignup.elements.password.value;
+  const name = formDOMSignup.elements.name.value;
+  mainApi.signup(email, password, name)
+    .catch((err) => {
+      if (err === 'Bad Request') {
+        formSignup.setServerError('Такой пользователь уже существует');
+      }
+    });
 }
 
+
+
+// слушатели событий
 loginButton.addEventListener('click', openFormSignin);
 closePopupButonIn.addEventListener('click', closeForm);
 closePopupButonUp.addEventListener('click', closeForm);
 closePopupButonSaccsess.addEventListener('click', closeForm);
 signupButton.addEventListener('click', openFormSignup);
 signinButton.addEventListener('click', openFormSignin);
+popupButtonSignup.addEventListener('click', signup);

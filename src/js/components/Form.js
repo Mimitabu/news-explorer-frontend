@@ -10,7 +10,10 @@ export default class Form {
       .addEventListener('input', this._validateForm);
   }
 
-  setServerError(){
+  setServerError(errorText) {
+    this.domElement
+      .querySelector('.popup__error-signin')
+      .textContent = errorText;
   }
 
   _validateInputElement(str) {

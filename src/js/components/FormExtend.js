@@ -7,6 +7,12 @@ export default class FormExtend extends Form {
     this._clearErrors();
   }
 
+  setServerError(errorText) {
+    this.domElement
+      .querySelector('.popup__error-signup')
+      .textContent = errorText;
+  }
+
   _validateLenghtName(str) {
     if (str.value.length === 0) {
       this.domElement
