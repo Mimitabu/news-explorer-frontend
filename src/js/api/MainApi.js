@@ -8,9 +8,9 @@ export default class MainApi {
   signup(userEmail, userPassword, userName) {
     return fetch(`${this.baseUrl}/signup`, {
       method: 'POST',
-      // headers: {
-      //   'Content-Type': 'application/json',
-      // },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         email: userEmail,
         password: userPassword,
@@ -19,7 +19,8 @@ export default class MainApi {
     })
       .then((res) => {
         if (res.ok) {
-          res.json();
+          return res.json();
+          // console.log(res);
         }
         return Promise.reject(res.statusText);
       });

@@ -51,7 +51,6 @@ function openFormSignup() {
 // открытие попапа успешной регистрации
 function openFormSuccessSignup() {
   popup.clearContent('.popup__content-signup');
-  popup.clearContent('.popup__content_signin');
   popup.setContent('.popup__content_successful-signup');
 }
 
@@ -61,6 +60,10 @@ function signup(event) {
   const password = formDOMSignup.elements.password.value;
   const name = formDOMSignup.elements.name.value;
   mainApi.signup(email, password, name)
+    .then(() => {
+      openFormSuccessSignup();
+      console.log('я выполняюсь');
+    })
     .catch((err) => {
       if (err === 'Bad Request') {
         formSignup.setServerError('Такой пользователь уже существует');

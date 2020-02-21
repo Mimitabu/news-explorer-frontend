@@ -12,7 +12,6 @@ export default class Popup {
   }
 
   close(event) {
-    // event.target.closest('.popup').classList.remove('popup_is-opened');
     this.domElement.classList.remove('popup_is-opened');
   }
 
