@@ -13,8 +13,9 @@ const closePopupButonSaccsess = new Button(document.querySelector('.popup__close
 const loginButton = new Button(document.querySelector('.header__login'));
 const signupButton = new Button(document.querySelector('.popup__link-signup'));
 const signinButton = new Button(document.querySelector('.popup__link-signin'));
+const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
 
-// кнопки Зарешистрироваться и Войти, которые отпраляют данные формы на сервер
+// кнопки Зарегистрироваться и Войти, которые отпраляют данные формы на сервер
 const popupButtonSignup = new Button(document.querySelector('.popup__button_signup'));
 
 const popup = new Popup(document.querySelector('.popup'));
@@ -38,4 +39,5 @@ export {
   formSignin,
   formSignup,
   popupButtonSignup,
+  afterSignupButton,
 };

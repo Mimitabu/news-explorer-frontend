@@ -13,6 +13,7 @@ import {
   formSignin,
   formSignup,
   popupButtonSignup,
+  afterSignupButton,
 } from './js/constants/constants';
 
 import {
@@ -81,3 +82,4 @@ closePopupButonSaccsess.addEventListener('click', closeForm);
 signupButton.addEventListener('click', openFormSignup);
 signinButton.addEventListener('click', openFormSignin);
 popupButtonSignup.addEventListener('click', signup);
+afterSignupButton.addEventListener('click', openFormSignin);
