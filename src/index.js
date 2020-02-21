@@ -73,6 +73,16 @@ function signup(event) {
 }
 
 
+function signin(event) {
+  event.preventDefault();
+  const email = formDOMSignin.elements.email.value;
+  const password = formDOMSignin.elements.password.value;
+  mainApi.signin(email, password)
+    .then(() => {
+
+    });
+}
+
 
 // слушатели событий
 loginButton.addEventListener('click', openFormSignin);

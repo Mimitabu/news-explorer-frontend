@@ -42,6 +42,10 @@ export default class MainApi {
       .then((data) => {
         // сохраняем токен
         localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify({
+          email: data.email,
+          name: data.name,
+        }));
       });
   }
 
