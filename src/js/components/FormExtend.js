@@ -1,5 +1,6 @@
 import Form from './Form';
 
+// Класс формы регистрации, расширяющий класс формы входа
 export default class FormExtend extends Form {
   constructor(domElement) {
     super(domElement);
@@ -7,12 +8,14 @@ export default class FormExtend extends Form {
     this._clearErrors();
   }
 
+  // добавляет форме ошибку, пришедшую с сервера
   setServerError(errorText) {
     this.domElement
       .querySelector('.popup__error-signup')
       .textContent = errorText;
   }
 
+  // валидирует name
   _validateLenghtName(str) {
     if (str.value.length === 0) {
       this.domElement
@@ -32,6 +35,7 @@ export default class FormExtend extends Form {
     return false;
   }
 
+  // валидирует всю форму
   _validateForm() {
     const inputEmail = this._validateInputElement(this.domElement.email);
     const inputPassword = this._validatePassword(this.domElement.password);
@@ -39,14 +43,13 @@ export default class FormExtend extends Form {
 
     this._buttonDisabled();
     if (inputEmail && inputPassword && inputName) {
-      this.domElement.querySelector('.popup__button')
-        .classList.remove('popup__button_disabled');
-      this.domElement.querySelector('.popup__button').removeAttribute('disabled');
+      this._buttonActive();
     } else {
       this._buttonDisabled();
     }
   }
 
+  // очищает сообщения об ошибках
   _clearErrors() {
     this.domElement
       .querySelector('.popup__error-name')
@@ -57,8 +60,12 @@ export default class FormExtend extends Form {
     this.domElement
       .querySelector('.popup__error-password')
       .textContent = '';
+    this.domElement
+      .querySelector('.popup__error-signup')
+      .textContent = '';
   }
 
+  // очищает поля формы
   _clear() {
     this.domElement.email.value = '';
     this.domElement.password.value = '';

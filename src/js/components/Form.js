@@ -10,12 +10,14 @@ export default class Form {
       .addEventListener('input', this._validateForm);
   }
 
+  // добавляет форме ошибку, пришедшую с сервера
   setServerError(errorText) {
     this.domElement
       .querySelector('.popup__error-signin')
       .textContent = errorText;
   }
 
+  // валидирует emai
   _validateInputElement(str) {
     if (!(validator.isEmail(str.value))) {
       this.domElement
@@ -30,6 +32,7 @@ export default class Form {
     return false;
   }
 
+  // валидирует пароль
   _validatePassword(str) {
     if (str.value.length === 0) {
       this.domElement
@@ -48,20 +51,20 @@ export default class Form {
     return false;
   }
 
+  // валидирует всю форму
   _validateForm() {
     const inputEmail = this._validateInputElement(this.domElement.email);
     const inputPassword = this._validatePassword(this.domElement.password);
     this._buttonDisabled();
 
     if (inputEmail && inputPassword) {
-      this.domElement.querySelector('.popup__button')
-        .classList.remove('popup__button_disabled');
-      this.domElement.querySelector('.popup__button').removeAttribute('disabled');
+      this._buttonActive();
     } else {
       this._buttonDisabled();
     }
   }
 
+  // очищает сообщения об ошибках
   _clearErrors() {
     this.domElement
       .querySelector('.popup__error-email')
@@ -69,18 +72,31 @@ export default class Form {
     this.domElement
       .querySelector('.popup__error-password')
       .textContent = '';
+    this.domElement
+      .querySelector('.popup__error-signin')
+      .textContent = '';
   }
 
+  // очищает поля формы
   _clear() {
     this.domElement.email.value = '';
     this.domElement.password.value = '';
   }
 
+  // деактивирует кнопку входа
   _buttonDisabled() {
     this.domElement.querySelector('.popup__button')
       .classList.add('popup__button_disabled');
     this.domElement.querySelector('.popup__button').setAttribute('disabled', true);
   }
+
+  // активирует кнопку входа
+  _buttonActive() {
+    this.domElement.querySelector('.popup__button')
+      .classList.remove('popup__button_disabled');
+    this.domElement.querySelector('.popup__button').removeAttribute('disabled');
+  }
+
   _getInfo() {
   }
 }

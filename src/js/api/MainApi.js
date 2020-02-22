@@ -20,7 +20,6 @@ export default class MainApi {
       .then((res) => {
         if (res.ok) {
           return res.json();
-          // console.log(res);
         }
         return Promise.reject(res.statusText);
       });
@@ -42,10 +41,11 @@ export default class MainApi {
       .then((data) => {
         // сохраняем токен
         localStorage.setItem('token', data.token);
-        localStorage.setItem('user', JSON.stringify({
-          email: data.email,
-          name: data.name,
-        }));
+        // localStorage.setItem('user', JSON.stringify({
+        //   email: data.email,
+        //   name: data.name,
+        // }));
+        console.log(data);
       });
   }
 

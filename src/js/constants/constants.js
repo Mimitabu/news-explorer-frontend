@@ -3,6 +3,8 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import FormExtend from '../components/FormExtend';
 import MainApi from '../api/MainApi';
+import Header from '../components/Header';
+import HeaderMini from '../components/HeaderMini';
 
 // кнопки закрытия трех попапов
 const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
@@ -18,12 +20,17 @@ const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
 // кнопки Зарегистрироваться и Войти, которые отпраляют данные формы на сервер
 const popupButtonSignup = new Button(document.querySelector('.popup__button_signup'));
 
+// попап и форма регистрации
 const popup = new Popup(document.querySelector('.popup'));
 const formSignin = new Form(document.forms.signin);
 const formSignup = new FormExtend(document.forms.signup);
 
-const mainURL = 'http://api.news-explorer.pw';
+// шапка приложения в 2-х состояниях
+const header = new Header(document.querySelector('.header'));
+const headerMini = new HeaderMini(document.querySelector('.header-mini'));
 
+// API пользователей
+const mainURL = 'http://api.news-explorer.pw';
 const mainApi = new MainApi(mainURL);
 
 
@@ -40,4 +47,6 @@ export {
   formSignup,
   popupButtonSignup,
   afterSignupButton,
+  header,
+  headerMini,
 };
