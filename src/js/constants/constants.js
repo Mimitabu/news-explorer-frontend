@@ -5,6 +5,8 @@ import FormExtend from '../components/FormExtend';
 import MainApi from '../api/MainApi';
 import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
+import { getUser } from '../utils/utils';
+
 
 // кнопки закрытия трех попапов
 const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
@@ -34,6 +36,9 @@ const headerMini = new HeaderMini(document.querySelector('.header-mini'));
 const mainURL = 'http://api.news-explorer.pw';
 const mainApi = new MainApi(mainURL);
 
+const getProfile = getUser('user');
+const currentUser = getProfile.name;
+
 
 export {
   closePopupButonIn,
@@ -51,4 +56,6 @@ export {
   afterSignupButton,
   header,
   headerMini,
+  getProfile,
+  currentUser,
 };

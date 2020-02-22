@@ -16,6 +16,8 @@ import {
   afterSignupButton,
   header,
   headerMini,
+  currentUser,
+  getProfile,
 } from './js/constants/constants';
 
 import {
@@ -24,7 +26,7 @@ import {
   deleteUser,
 } from './js/utils/utils';
 
-// header.render(true, 'cat');
+header.render(getProfile, currentUser);
 
 
 const formDOMSignin = document.forms.signin;

@@ -1,12 +1,16 @@
-import {
-  popup,
-} from '../constants/constants';
 
-// закрытие попапа
-function closeForm() {
-  popup.close();
+// возвращает текущего юзера из localStorage
+function getUser(item) {
+  return JSON.parse(localStorage.getItem(item));
 }
 
+// удаляет текущего юзера из localStorage
+function deleteUser(item) {
+  localStorage.removeItem(item);
+}
+
+
 export {
-  closeForm,
+  getUser,
+  deleteUser,
 };
