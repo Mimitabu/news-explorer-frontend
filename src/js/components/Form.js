@@ -17,7 +17,7 @@ export default class Form {
       .textContent = errorText;
   }
 
-  // валидирует emai
+  // валидирует email
   _validateInputElement(str) {
     if (!(validator.isEmail(str.value))) {
       this.domElement

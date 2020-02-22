@@ -1,13 +1,14 @@
 export default class HeaderMini {
   constructor(domElement) {
     this.domElement = domElement;
+    this.render = this.render.bind(this);
   }
 
   // рендерит шапку
-  renderMini(isLoggedIn, userName) {
+  render(isLoggedIn, userName) {
     if (isLoggedIn) {
       this.domElement
-        .querySelector('header-mini__saved-massages')
+        .querySelector('.header-mini__saved-massages')
         .classList.add('header-mini__saved-massages_is-opened');
       this.domElement
         .querySelector('.header-mini__logout')

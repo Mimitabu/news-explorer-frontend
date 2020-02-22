@@ -1,6 +1,7 @@
 export default class Header {
   constructor(domElement) {
     this.domElement = domElement;
+    this.render = this.render.bind(this);
   }
 
   // рендерит шапку
@@ -8,7 +9,7 @@ export default class Header {
     if (isLoggedIn) {
       this.domElement
         .querySelector('.header__saved-massages')
-        .classList.add('header__saved-massages_is-opened');
+        .classList.add('header__saved-massages_is-open');
       this.domElement
         .querySelector('.header__logout')
         .classList.add('header__logout_is-opened');
@@ -18,19 +19,20 @@ export default class Header {
       this.domElement
         .querySelector('.header__login')
         .classList.remove('header__login_is-opened');
+    } else {
+      this.domElement
+        .querySelector('.header__saved-massages')
+        .classList.remove('header__saved-massages_is-open');
+      this.domElement
+        .querySelector('.header__logout')
+        .classList.remove('header__logout_is-opened');
+      this.domElement
+        .querySelector('.header__user-name')
+        .textContent = '';
+      this.domElement
+        .querySelector('.header__login')
+        .classList.add('header__login_is-opened');
     }
-    this.domElement
-      .querySelector('.header__saved-massages')
-      .classList.remove('header__saved-massages_is-opened');
-    this.domElement
-      .querySelector('.header__logout')
-      .classList.remove('header__logout_is-opened');
-    this.domElement
-      .querySelector('.header__user-name')
-      .textContent = '';
-    this.domElement
-      .querySelector('.header__login')
-      .classList.add('header__login_is-opened');
   }
 }
 

@@ -37,15 +37,21 @@ export default class MainApi {
         'Content-Type': 'application/json',
       },
     })
-      .then(res => res.json())
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(res.statusText);
+      })
       .then((data) => {
         // сохраняем токен
-        localStorage.setItem('token', data.token);
-        // localStorage.setItem('user', JSON.stringify({
-        //   email: data.email,
-        //   name: data.name,
-        // }));
+        localStorage.setItem('token', data.userToken);
+        localStorage.setItem('user', JSON.stringify({
+          email: data.email,
+          name: data.name,
+        }));
         console.log(data);
+        return data;
       });
   }
 

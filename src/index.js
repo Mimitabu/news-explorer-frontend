@@ -1,6 +1,5 @@
 import './style.css';
 
-
 import {
   closePopupButonIn,
   closePopupButonUp,
@@ -13,25 +12,23 @@ import {
   formSignin,
   formSignup,
   popupButtonSignup,
+  popupButtonSignin,
   afterSignupButton,
+  header,
+  headerMini,
 } from './js/constants/constants';
 
 import {
   closeForm,
+  getUser,
+  deleteUser,
 } from './js/utils/utils';
+
+// header.render(true, 'cat');
 
 
 const formDOMSignin = document.forms.signin;
 const formDOMSignup = document.forms.signup;
-
-// const contentSignin = document.querySelector('.popup__content-signin');
-// const contentSignup = document.querySelector('.popup__content-signup');
-
-
-// const popupSignin = new Popup(document.querySelector('.popup__signin'));
-// const popupSignup = new Popup(document.querySelector('.popup__signup'));
-// const popupSuccessSignup = new Popup(document.querySelector('.popup__successful-signup'));
-
 
 // открытие попапа входа
 function openFormSignin() {
@@ -48,13 +45,13 @@ function openFormSignup() {
 }
 
 
-
 // открытие попапа успешной регистрации
 function openFormSuccessSignup() {
   popup.clearContent('.popup__content-signup');
   popup.setContent('.popup__content_successful-signup');
 }
 
+// регистрация пользователя
 function signup(event) {
   event.preventDefault();
   const email = formDOMSignup.elements.email.value;
@@ -63,7 +60,6 @@ function signup(event) {
   mainApi.signup(email, password, name)
     .then(() => {
       openFormSuccessSignup();
-      console.log('я выполняюсь');
     })
     .catch((err) => {
       if (err === 'Bad Request') {
@@ -72,14 +68,19 @@ function signup(event) {
     });
 }
 
-
+// вход пользователя
 function signin(event) {
   event.preventDefault();
   const email = formDOMSignin.elements.email.value;
   const password = formDOMSignin.elements.password.value;
   mainApi.signin(email, password)
-    .then(() => {
-
+    .then((data) => {
+      header.render(true, data.name);
+      headerMini.render(true, data.name);
+      closeForm();
+    })
+    .catch((err) => {
+      formSignin.setServerError(err);
     });
 }
 
@@ -93,3 +94,4 @@ signupButton.addEventListener('click', openFormSignup);
 signinButton.addEventListener('click', openFormSignin);
 popupButtonSignup.addEventListener('click', signup);
 afterSignupButton.addEventListener('click', openFormSignin);
+popupButtonSignin.addEventListener('click', signin);

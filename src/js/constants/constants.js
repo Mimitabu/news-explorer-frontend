@@ -19,6 +19,7 @@ const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
 
 // кнопки Зарегистрироваться и Войти, которые отпраляют данные формы на сервер
 const popupButtonSignup = new Button(document.querySelector('.popup__button_signup'));
+const popupButtonSignin = new Button(document.querySelector('.popup__button_signin'));
 
 // попап и форма регистрации
 const popup = new Popup(document.querySelector('.popup'));
@@ -46,6 +47,7 @@ export {
   formSignin,
   formSignup,
   popupButtonSignup,
+  popupButtonSignin,
   afterSignupButton,
   header,
   headerMini,
