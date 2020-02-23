@@ -13,7 +13,7 @@ const closePopupButonUp = new Button(document.querySelector('.popup__close_signu
 const closePopupButonSaccsess = new Button(document.querySelector('.popup__close_successful-signup'));
 
 // кнопки переключения между попапами
-const loginButton = new Button(document.querySelector('.header__login'));
+
 const signupButton = new Button(document.querySelector('.popup__link-signup'));
 const signinButton = new Button(document.querySelector('.popup__link-signin'));
 const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
@@ -22,8 +22,15 @@ const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
 const popupButtonSignup = new Button(document.querySelector('.popup__button_signup'));
 const popupButtonSignin = new Button(document.querySelector('.popup__button_signin'));
 
-// кнопка logout
+// кнопки login и logout
+const loginButton = new Button(document.querySelector('.header__login'));
+const loginMiniButton = new Button(document.querySelector('.header-mini__login'));
 const logoutButton = new Button(document.querySelector('.header__logout'));
+const logoutMiniButton = new Button(document.querySelector('.header-mini__logout'));
+
+// кнопка открытия/закрытия header-mini
+const headerMiniOpenButton = new Button(document.querySelector('.header__hide-nav'));
+const headerMiniCloseButton = new Button(document.querySelector('.header-mini__hide-nav'));
 
 // попап и форма регистрации
 const popup = new Popup(document.querySelector('.popup'));
@@ -40,7 +47,7 @@ const mainApi = new MainApi(mainURL);
 
 // получение профиля юзера из localstorage
 const getProfile = getUser('user');
-// const currentUser = getProfile.name;
+
 
 
 
@@ -62,6 +69,9 @@ export {
   header,
   headerMini,
   getProfile,
-  // currentUser,
+  loginMiniButton,
   logoutButton,
+  logoutMiniButton,
+  headerMiniOpenButton,
+  headerMiniCloseButton,
 };

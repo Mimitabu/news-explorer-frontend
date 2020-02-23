@@ -16,15 +16,19 @@ import {
   afterSignupButton,
   header,
   headerMini,
-  // currentUser,
   getProfile,
+  loginMiniButton,
   logoutButton,
+  logoutMiniButton,
+  headerMiniOpenButton,
+  headerMiniCloseButton,
 } from './js/constants/constants';
 
 import {
   deleteUser,
 } from './js/utils/utils';
 
+// получаем имя юзера из localstorage
 function getCurrentUser() {
   let currentUser = '';
   if (getProfile) {
@@ -33,11 +37,25 @@ function getCurrentUser() {
   return currentUser;
 }
 
+// рендерим header
 header.render(getProfile, getCurrentUser());
+headerMini.render(getProfile, getCurrentUser());
 
 
 const formDOMSignin = document.forms.signin;
 const formDOMSignup = document.forms.signup;
+
+// открытие HeaderMini
+function openHeaderMini() {
+  const headerMiniDOM = document.querySelector('.header-mini');
+  headerMiniDOM.classList.add('header-mini_is-opened');
+}
+
+// закрытие HeaderMini
+function closeHeaderMini() {
+  const headerMiniDOM = document.querySelector('.header-mini');
+  headerMiniDOM.classList.remove('header-mini_is-opened');
+}
 
 // открытие попапа входа
 function openFormSignin() {
@@ -45,6 +63,7 @@ function openFormSignin() {
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_successful-signup');
   popup.setContent('.popup__content-signin');
+  closeHeaderMini();
 }
 
 // открытие попапа регистрации
@@ -52,7 +71,6 @@ function openFormSignup() {
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
 }
-
 
 // открытие попапа успешной регистрации
 function openFormSuccessSignup() {
@@ -106,8 +124,11 @@ function logout() {
 }
 
 
+
+
 // слушатели событий
 loginButton.addEventListener('click', openFormSignin);
+loginMiniButton.addEventListener('click', openFormSignin);
 closePopupButonIn.addEventListener('click', closeForm);
 closePopupButonUp.addEventListener('click', closeForm);
 closePopupButonSaccsess.addEventListener('click', closeForm);
@@ -117,3 +138,6 @@ popupButtonSignup.addEventListener('click', signup);
 afterSignupButton.addEventListener('click', openFormSignin);
 popupButtonSignin.addEventListener('click', signin);
 logoutButton.addEventListener('click', logout);
+logoutMiniButton.addEventListener('click', logout);
+headerMiniOpenButton.addEventListener('click', openHeaderMini);
+headerMiniCloseButton.addEventListener('click', closeHeaderMini);
