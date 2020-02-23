@@ -7,7 +7,6 @@ import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
 import { getUser } from '../utils/utils';
 
-
 // кнопки закрытия трех попапов
 const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
 const closePopupButonUp = new Button(document.querySelector('.popup__close_signup'));
@@ -23,6 +22,9 @@ const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
 const popupButtonSignup = new Button(document.querySelector('.popup__button_signup'));
 const popupButtonSignin = new Button(document.querySelector('.popup__button_signin'));
 
+// кнопка logout
+const logoutButton = new Button(document.querySelector('.header__logout'));
+
 // попап и форма регистрации
 const popup = new Popup(document.querySelector('.popup'));
 const formSignin = new Form(document.forms.signin);
@@ -36,8 +38,11 @@ const headerMini = new HeaderMini(document.querySelector('.header-mini'));
 const mainURL = 'http://api.news-explorer.pw';
 const mainApi = new MainApi(mainURL);
 
+// получение профиля юзера из localstorage
 const getProfile = getUser('user');
-const currentUser = getProfile.name;
+// const currentUser = getProfile.name;
+
+
 
 
 export {
@@ -57,5 +62,6 @@ export {
   header,
   headerMini,
   getProfile,
-  currentUser,
+  // currentUser,
+  logoutButton,
 };

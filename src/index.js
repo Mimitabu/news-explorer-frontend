@@ -16,17 +16,24 @@ import {
   afterSignupButton,
   header,
   headerMini,
-  currentUser,
+  // currentUser,
   getProfile,
+  logoutButton,
 } from './js/constants/constants';
 
 import {
-  closeForm,
-  getUser,
   deleteUser,
 } from './js/utils/utils';
 
-header.render(getProfile, currentUser);
+function getCurrentUser() {
+  let currentUser = '';
+  if (getProfile) {
+    currentUser = getProfile.name;
+  }
+  return currentUser;
+}
+
+header.render(getProfile, getCurrentUser());
 
 
 const formDOMSignin = document.forms.signin;
@@ -51,6 +58,11 @@ function openFormSignup() {
 function openFormSuccessSignup() {
   popup.clearContent('.popup__content-signup');
   popup.setContent('.popup__content_successful-signup');
+}
+
+// закрытие попапа
+function closeForm() {
+  popup.close();
 }
 
 // регистрация пользователя
@@ -86,6 +98,13 @@ function signin(event) {
     });
 }
 
+// выход из профиля
+function logout() {
+  deleteUser('user');
+  header.render(false, '');
+  headerMini.render(false, '');
+}
+
 
 // слушатели событий
 loginButton.addEventListener('click', openFormSignin);
@@ -97,3 +116,4 @@ signinButton.addEventListener('click', openFormSignin);
 popupButtonSignup.addEventListener('click', signup);
 afterSignupButton.addEventListener('click', openFormSignin);
 popupButtonSignin.addEventListener('click', signin);
+logoutButton.addEventListener('click', logout);
