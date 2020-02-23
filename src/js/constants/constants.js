@@ -3,6 +3,7 @@ import Button from '../components/Button';
 import Form from '../components/Form';
 import FormExtend from '../components/FormExtend';
 import MainApi from '../api/MainApi';
+import NewsApi from '../api/NewsApi';
 import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
 import { getUser } from '../utils/utils';
@@ -45,10 +46,13 @@ const headerMini = new HeaderMini(document.querySelector('.header-mini'));
 const mainURL = 'http://api.news-explorer.pw';
 const mainApi = new MainApi(mainURL);
 
+// API новостей
+const newsURL = 'http://newsapi.org/v2/everything?';
+const apiKey = '07180a3ab8d04f088f048cab429a6b29';
+const newsApi = new NewsApi(newsURL, apiKey);
+
 // получение профиля юзера из localstorage
 const getProfile = getUser('user');
-
-
 
 
 
@@ -74,4 +78,5 @@ export {
   logoutMiniButton,
   headerMiniOpenButton,
   headerMiniCloseButton,
+  newsApi,
 };

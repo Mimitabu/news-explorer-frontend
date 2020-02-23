@@ -22,11 +22,20 @@ import {
   logoutMiniButton,
   headerMiniOpenButton,
   headerMiniCloseButton,
+  newsApi,
 } from './js/constants/constants';
 
 import {
   deleteUser,
 } from './js/utils/utils';
+
+newsApi.getNews('Помидор')
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // получаем имя юзера из localstorage
 function getCurrentUser() {
@@ -112,7 +121,11 @@ function signin(event) {
       closeForm();
     })
     .catch((err) => {
-      formSignin.setServerError(err);
+      if (err === 'Unauthorized') {
+        formSignin.setServerError('Неверный логин или пароль');
+      } else {
+        formSignin.setServerError('Пользователь не зарегистрирован');
+      }
     });
 }
 
