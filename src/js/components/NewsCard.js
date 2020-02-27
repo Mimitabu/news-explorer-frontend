@@ -3,11 +3,11 @@ import { link } from '../constants/constants';
 
 export default class NewsCard {
   constructor(data) {
-    this.data.title = data.title;
-    this.data.publishedAt = data.publishedAt;
-    this.data.description = data.description;
-    this.data.urlToImage = data.urlToImage;
-    this.data.source = data.source.name;
+    this.title = data.title;
+    this.publishedAt = data.publishedAt;
+    this.description = data.description;
+    this.urlToImage = data.urlToImage;
+    this.source = data.source.name;
     this.cardElement = this.createCard();
   }
 
@@ -36,10 +36,10 @@ export default class NewsCard {
     const descriptionSource = document.createElement('p');
 
     placeCardElement.classList.add('result-card');
-    placeCardElement.setAttribute('keyWord', userKeyWord);
+    // placeCardElement.setAttribute('keyWord', userKeyWord);
 
     cardImageElement.classList.add('result-card__image');
-    cardImageElement.style.backgroundImage = `url(${this.data.urlToImage})`;
+    cardImageElement.style.backgroundImage = `url(${this.urlToImage})`;
     buttonContent.classList.add('result-card__button-content');
     buttonWarning.classList.add('result-card__button-warning');
     button.classList.add('result-card__button');
@@ -49,13 +49,13 @@ export default class NewsCard {
 
     cardDescriptionElement.classList.add('result-card__description');
     descriptionData.classList.add('result-card__description-data');
-    descriptionData.textContent = this.data.publishedAt;
+    descriptionData.textContent = this.publishedAt;
     descriptionTitle.classList.add('result-card__description-title');
-    descriptionTitle.textContent = this.data.title;
+    descriptionTitle.textContent = this.title;
     descriptionAbout.classList.add('result-card__description-about');
-    descriptionAbout.textContent = this.data.description;
+    descriptionAbout.textContent = this.description;
     descriptionSource.classList.add('result-card__description-source');
-    descriptionSource.textContent = this.data.source;
+    descriptionSource.textContent = this.source;
 
     placeCardElement.appendChild(cardImageElement);
     placeCardElement.appendChild(cardDescriptionElement);
@@ -70,6 +70,8 @@ export default class NewsCard {
     cardDescriptionElement.appendChild(descriptionAbout);
     cardDescriptionElement.appendChild(descriptionSource);
 
+    console.log(placeCardElement);
     return placeCardElement;
+
   }
 }

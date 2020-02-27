@@ -1,4 +1,6 @@
 import './style.css';
+import NewsCard from './js/components/NewsCard';
+import NewsCardList from './js/components/NewsCardList';
 
 import {
   closePopupButonIn,
@@ -23,7 +25,6 @@ import {
   headerMiniOpenButton,
   headerMiniCloseButton,
   newsApi,
-  link,
 } from './js/constants/constants';
 
 
@@ -31,18 +32,36 @@ import {
   deleteUser,
 } from './js/utils/utils';
 
-console.log(link);
+// newsApi.getNews('природа')
+//     .then((data) => {
+//       console.log(data);
+//       console.log(data.articles);
+//     });
 
-newsApi.getNews('природа')
 
-  .then((data) => {
-    console.log(data);
-    const dataJS = JSON.stringify(data);
-    console.log(dataJS);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+function firstRender() {
+  const cardElementArray = [];
+  newsApi.getNews('природа')
+    .then((data) => {
+      console.log(data);
+      const dataArticles = data.articles;
+      dataArticles.forEach((item) => {
+        const { cardElement } = new NewsCard(item);
+        cardElementArray.push(cardElement);
+      });
+      // cardElementArray.forEach((item) => {
+        const cardList = new NewsCardList(document.querySelector('.results__list'), cardElementArray);
+        cardList.renderResults();
+      // });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+firstRender();
+
+
 
 // получаем имя юзера из localstorage
 function getCurrentUser() {
