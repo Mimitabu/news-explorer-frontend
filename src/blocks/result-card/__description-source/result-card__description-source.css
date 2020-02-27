@@ -20,9 +20,3 @@
   }
 }
 
-@media (max-width: 768px) {
-  .result-card__description-source {
-    position: relative;
-
-  }
-}

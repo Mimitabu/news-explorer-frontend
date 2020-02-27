@@ -25,6 +25,9 @@ import {
   headerMiniOpenButton,
   headerMiniCloseButton,
   newsApi,
+  searchButton,
+  showMoreButton,
+  // searchInput,
 } from './js/constants/constants';
 
 
@@ -32,36 +35,25 @@ import {
   deleteUser,
 } from './js/utils/utils';
 
-// newsApi.getNews('природа')
+// function firstRender() {
+//   const cardElementArray = [];
+//   newsApi.getNews('природа')
 //     .then((data) => {
 //       console.log(data);
-//       console.log(data.articles);
+//       const dataArticles = data.articles;
+//       dataArticles.forEach((item) => {
+//         const { cardElement } = new NewsCard(item, 'природа');
+//         cardElementArray.push(cardElement);
+//       });
+//       const cardList = new NewsCardList(document.querySelector('.results__list'), cardElementArray);
+//       cardList.renderResults();
+//     })
+//     .catch((err) => {
+//       console.log(err);
 //     });
+// }
 
-
-function firstRender() {
-  const cardElementArray = [];
-  newsApi.getNews('природа')
-    .then((data) => {
-      console.log(data);
-      const dataArticles = data.articles;
-      dataArticles.forEach((item) => {
-        const { cardElement } = new NewsCard(item);
-        cardElementArray.push(cardElement);
-      });
-      // cardElementArray.forEach((item) => {
-        const cardList = new NewsCardList(document.querySelector('.results__list'), cardElementArray);
-        cardList.renderResults();
-      // });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-firstRender();
-
-
+// firstRender();
 
 // получаем имя юзера из localstorage
 function getCurrentUser() {
@@ -162,6 +154,45 @@ function logout() {
   headerMini.render(false, '');
 }
 
+const cardElementArray = [];
+let renderArray = [];
+function cardRender(event) {
+  event.preventDefault();
+  // const cardElementArray = [];
+  const searchInput = document.forms.search.elements.keyword;
+  newsApi.getNews(searchInput.value)
+    .then((data) => {
+      const dataArticles = data.articles;
+      dataArticles.forEach((item) => {
+        const { cardElement } = new NewsCard(item, searchInput.value);
+        cardElementArray.push(cardElement);
+      });
+      const partCardArray = cardElementArray.slice(0, 3);
+      const cardList = new NewsCardList(document.querySelector('.results__list'), partCardArray);
+      cardList.renderResults();
+      searchInput.value = '';
+      renderArray = cardElementArray.slice(3);
+      return renderArray;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+let from = 0;
+
+function moreResults() {
+  let until = from + 3;
+  if (until > renderArray.length) {
+    until = renderArray.length;
+  }
+  const sliceRenderArray = renderArray.slice(from, until);
+  const cardList = new NewsCardList(document.querySelector('.results__list'), sliceRenderArray);
+  cardList.renderResults();
+  from = until;
+  return from;
+}
+
 
 
 
@@ -180,3 +211,5 @@ logoutButton.addEventListener('click', logout);
 logoutMiniButton.addEventListener('click', logout);
 headerMiniOpenButton.addEventListener('click', openHeaderMini);
 headerMiniCloseButton.addEventListener('click', closeHeaderMini);
+searchButton.addEventListener('click', cardRender);
+showMoreButton.addEventListener('click', moreResults);

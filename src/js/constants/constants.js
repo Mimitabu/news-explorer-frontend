@@ -15,7 +15,6 @@ const closePopupButonUp = new Button(document.querySelector('.popup__close_signu
 const closePopupButonSaccsess = new Button(document.querySelector('.popup__close_successful-signup'));
 
 // кнопки переключения между попапами
-
 const signupButton = new Button(document.querySelector('.popup__link-signup'));
 const signinButton = new Button(document.querySelector('.popup__link-signin'));
 const afterSignupButton = new Button(document.querySelector('.popup__sign-in'));
@@ -55,6 +54,9 @@ const newsApi = new NewsApi(newsURL, apiKey);
 // получение профиля юзера из localstorage
 const getProfile = getUser('user');
 
+const searchButton = document.querySelector('.search__button');
+const showMoreButton = document.querySelector('.results__more-button');
+
 
 
 
@@ -83,4 +85,7 @@ export {
   headerMiniCloseButton,
   newsApi,
   link,
+  searchButton,
+  showMoreButton,
+  // searchInput,
 };

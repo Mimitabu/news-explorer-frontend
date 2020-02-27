@@ -2,13 +2,13 @@
 import { link } from '../constants/constants';
 
 export default class NewsCard {
-  constructor(data) {
+  constructor(data, keyWord) {
     this.title = data.title;
     this.publishedAt = data.publishedAt;
     this.description = data.description;
     this.urlToImage = data.urlToImage;
     this.source = data.source.name;
-    this.cardElement = this.createCard();
+    this.cardElement = this.createCard(keyWord);
   }
 
   // renderIcon() {
@@ -36,7 +36,7 @@ export default class NewsCard {
     const descriptionSource = document.createElement('p');
 
     placeCardElement.classList.add('result-card');
-    // placeCardElement.setAttribute('keyWord', userKeyWord);
+    placeCardElement.setAttribute('keyWord', userKeyWord);
 
     cardImageElement.classList.add('result-card__image');
     cardImageElement.style.backgroundImage = `url(${this.urlToImage})`;
