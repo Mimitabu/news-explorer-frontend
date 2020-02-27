@@ -6,6 +6,8 @@
   line-height: 30px;
   color: #1A1B22;
   margin: 12px 0px 16px;
+  max-height: 88px;
+  overflow: hidden;
 }
 
 @media (max-width: 1309px) {
