@@ -23,15 +23,22 @@ import {
   headerMiniOpenButton,
   headerMiniCloseButton,
   newsApi,
+  link,
 } from './js/constants/constants';
+
 
 import {
   deleteUser,
 } from './js/utils/utils';
 
-newsApi.getNews('Помидор')
+console.log(link);
+
+newsApi.getNews('природа')
+
   .then((data) => {
     console.log(data);
+    const dataJS = JSON.stringify(data);
+    console.log(dataJS);
   })
   .catch((err) => {
     console.log(err);

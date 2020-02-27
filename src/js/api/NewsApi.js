@@ -11,8 +11,9 @@ export default class NewsApi {
     this.apikey = apikey;
   }
 
-  getNews(keyWord) {
-    return fetch(`${this.baseUrl}q=${keyWord}&from=${now}&to=${past}3&language=ru&sortBy=popularity&pageSize=100&apiKey=${this.apikey}`, {
+  getNews(UserKeyWord) {
+    const keyWord = UserKeyWord;
+    return fetch(`${this.baseUrl}q=${UserKeyWord}&from=${now}&to=${past}&language=ru&sortBy=popularity&pageSize=100&apiKey=${this.apikey}`, {
       headers: {
         authorization: `Bearer ${this.apikey}`,
       },

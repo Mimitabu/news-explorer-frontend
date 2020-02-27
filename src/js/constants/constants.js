@@ -7,6 +7,7 @@ import NewsApi from '../api/NewsApi';
 import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
 import { getUser } from '../utils/utils';
+import link from '../../images/save_icon_normal.svg';
 
 // кнопки закрытия трех попапов
 const closePopupButonIn = new Button(document.querySelector('.popup__close_signin'));
@@ -56,6 +57,8 @@ const getProfile = getUser('user');
 
 
 
+
+
 export {
   closePopupButonIn,
   closePopupButonUp,
@@ -79,4 +82,5 @@ export {
   headerMiniOpenButton,
   headerMiniCloseButton,
   newsApi,
+  link,
 };
