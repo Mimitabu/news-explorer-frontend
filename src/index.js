@@ -18,7 +18,6 @@ import {
   afterSignupButton,
   header,
   headerMini,
-  getProfile,
   loginMiniButton,
   logoutButton,
   logoutMiniButton,
@@ -27,33 +26,23 @@ import {
   newsApi,
   searchButton,
   showMoreButton,
+  maxCount,
+  results,
+  resultsList,
   // searchInput,
 } from './js/constants/constants';
 
 
 import {
+  getUser,
   deleteUser,
+  preloader,
+  emptyResults,
+  errorResults,
 } from './js/utils/utils';
 
-// function firstRender() {
-//   const cardElementArray = [];
-//   newsApi.getNews('природа')
-//     .then((data) => {
-//       console.log(data);
-//       const dataArticles = data.articles;
-//       dataArticles.forEach((item) => {
-//         const { cardElement } = new NewsCard(item, 'природа');
-//         cardElementArray.push(cardElement);
-//       });
-//       const cardList = new NewsCardList(document.querySelector('.results__list'), cardElementArray);
-//       cardList.renderResults();
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// }
-
-// firstRender();
+// получение профиля юзера из localstorage
+const getProfile = getUser('user');
 
 // получаем имя юзера из localstorage
 function getCurrentUser() {
@@ -154,44 +143,61 @@ function logout() {
   headerMini.render(false, '');
 }
 
-const cardElementArray = [];
+let cardElementArray = [];
 let renderArray = [];
-function cardRender(event) {
-  event.preventDefault();
-  // const cardElementArray = [];
-  const searchInput = document.forms.search.elements.keyword;
-  newsApi.getNews(searchInput.value)
-    .then((data) => {
-      const dataArticles = data.articles;
-      dataArticles.forEach((item) => {
-        const { cardElement } = new NewsCard(item, searchInput.value);
-        cardElementArray.push(cardElement);
-      });
-      const partCardArray = cardElementArray.slice(0, 3);
-      const cardList = new NewsCardList(document.querySelector('.results__list'), partCardArray);
-      cardList.renderResults();
-      searchInput.value = '';
-      renderArray = cardElementArray.slice(3);
-      return renderArray;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
 
 let from = 0;
-
 function moreResults() {
-  let until = from + 3;
-  if (until > renderArray.length) {
-    until = renderArray.length;
+  let until = from + maxCount;
+  if (until > cardElementArray.length) {
+    until = cardElementArray.length;
+    showMoreButton.classList.remove('results__more-button_is-opened');
   }
-  const sliceRenderArray = renderArray.slice(from, until);
-  const cardList = new NewsCardList(document.querySelector('.results__list'), sliceRenderArray);
+  const sliceRenderArray = cardElementArray.slice(from, until);
+  const cardList = new NewsCardList(resultsList, sliceRenderArray);
   cardList.renderResults();
   from = until;
   return from;
 }
+
+
+function cardRender(event) {
+  cardElementArray = [];
+  from = 0;
+  event.preventDefault();
+  emptyResults(false);
+  errorResults(false);
+  const searchInput = document.forms.search.elements.keyword;
+  preloader(true);
+  newsApi.getNews(searchInput.value)
+    .then((data) => {
+      console.log(data);
+      const dataArticles = data.articles;
+      if (dataArticles.length === 0) {
+        emptyResults(true);
+      } else {
+        dataArticles.forEach((item) => {
+          const { cardElement } = new NewsCard(item, searchInput.value);
+          cardElementArray.push(cardElement);
+          results.classList.add('results_is-opened');
+        });
+      }
+      preloader(false);
+      moreResults();
+      searchInput.value = '';
+      console.log(cardElementArray);
+      return cardElementArray;
+    })
+    .catch((err) => {
+      errorResults(true);
+      console.log(err);
+    })
+    .finally(() => {
+      preloader(false);
+    });
+}
+
+
 
 
 

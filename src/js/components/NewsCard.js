@@ -8,6 +8,7 @@ export default class NewsCard {
     this.description = data.description;
     this.urlToImage = data.urlToImage;
     this.source = data.source.name;
+    this.url = data.url;
     this.cardElement = this.createCard(keyWord);
   }
 
@@ -33,7 +34,7 @@ export default class NewsCard {
     const descriptionData = document.createElement('p');
     const descriptionTitle = document.createElement('h3');
     const descriptionAbout = document.createElement('p');
-    const descriptionSource = document.createElement('p');
+    const descriptionSource = document.createElement('a');
 
     placeCardElement.classList.add('result-card');
     placeCardElement.setAttribute('keyWord', userKeyWord);
@@ -56,6 +57,8 @@ export default class NewsCard {
     descriptionAbout.textContent = this.description;
     descriptionSource.classList.add('result-card__description-source');
     descriptionSource.textContent = this.source;
+    descriptionSource.setAttribute('href', this.url);
+    descriptionSource.setAttribute('target', '_blank');
 
     placeCardElement.appendChild(cardImageElement);
     placeCardElement.appendChild(cardDescriptionElement);
@@ -70,7 +73,7 @@ export default class NewsCard {
     cardDescriptionElement.appendChild(descriptionAbout);
     cardDescriptionElement.appendChild(descriptionSource);
 
-    console.log(placeCardElement);
+    // console.log(placeCardElement);
     return placeCardElement;
 
   }

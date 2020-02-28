@@ -1,4 +1,5 @@
 @import url(./__title/no-results__title.css);
+@import url(./__title/_is-opened/no-results__title_is-opened.css);
 @import url(./__text/no-results__text.css);
 @import url(./__image/no-results__image.css);
 @import url(./_is-opened/no-results_is-opened.css);

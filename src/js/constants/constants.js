@@ -6,7 +6,7 @@ import MainApi from '../api/MainApi';
 import NewsApi from '../api/NewsApi';
 import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
-import { getUser } from '../utils/utils';
+// import { getUser } from '../utils/utils';
 import link from '../../images/save_icon_normal.svg';
 
 // кнопки закрытия трех попапов
@@ -51,12 +51,20 @@ const newsURL = 'http://newsapi.org/v2/everything?';
 const apiKey = '07180a3ab8d04f088f048cab429a6b29';
 const newsApi = new NewsApi(newsURL, apiKey);
 
-// получение профиля юзера из localstorage
-const getProfile = getUser('user');
-
+// Кнопка Искать и Показать еще
 const searchButton = document.querySelector('.search__button');
 const showMoreButton = document.querySelector('.results__more-button');
 
+// счетчик, сколько статей выводить за раз в Результатах поиска
+const maxCount = 3;
+
+// блок поиска и список поиска
+const results = document.querySelector('.results');
+const resultsList = document.querySelector('.results__list');
+
+// тексты ошибок при рендере карточек
+const emptyResaltText = 'К сожалению по вашему запросу ничего не найдено';
+const errorResultText = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз';
 
 
 
@@ -77,7 +85,6 @@ export {
   afterSignupButton,
   header,
   headerMini,
-  getProfile,
   loginMiniButton,
   logoutButton,
   logoutMiniButton,
@@ -87,5 +94,9 @@ export {
   link,
   searchButton,
   showMoreButton,
-  // searchInput,
+  maxCount,
+  results,
+  resultsList,
+  emptyResaltText,
+  errorResultText,
 };
