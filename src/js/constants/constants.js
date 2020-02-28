@@ -71,6 +71,7 @@ const noResultsText = document.querySelector('.no-results__text');
 const noResultsTitle = document.querySelector('.no-results__title');
 
 
+
 export {
   closePopupButonIn,
   closePopupButonUp,

@@ -29,7 +29,6 @@ import {
   maxCount,
   results,
   resultsList,
-  // searchInput,
 } from './js/constants/constants';
 
 
@@ -40,6 +39,7 @@ import {
   emptyResults,
   errorResults,
   removeAllChild,
+  // searchFormValidation,
 } from './js/utils/utils';
 
 // получение профиля юзера из localstorage

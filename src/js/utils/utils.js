@@ -54,6 +54,7 @@ function errorResults(flag) {
   }
 }
 
+// удаление дочерних карточек
 function removeAllChild(container) {
   while (container.firstChild) {
     container.removeChild(container.firstChild);

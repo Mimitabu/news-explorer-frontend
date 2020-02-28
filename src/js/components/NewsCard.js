@@ -75,6 +75,5 @@ export default class NewsCard {
 
     // console.log(placeCardElement);
     return placeCardElement;
-
   }
 }
