@@ -39,6 +39,7 @@ import {
   preloader,
   emptyResults,
   errorResults,
+  removeAllChild,
 } from './js/utils/utils';
 
 // получение профиля юзера из localstorage
@@ -144,7 +145,6 @@ function logout() {
 }
 
 let cardElementArray = [];
-let renderArray = [];
 
 let from = 0;
 function moreResults() {
@@ -164,6 +164,7 @@ function moreResults() {
 function cardRender(event) {
   cardElementArray = [];
   from = 0;
+  removeAllChild(resultsList);
   event.preventDefault();
   emptyResults(false);
   errorResults(false);

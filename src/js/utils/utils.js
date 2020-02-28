@@ -1,6 +1,9 @@
 import {
   emptyResaltText,
   errorResultText,
+  noResults,
+  noResultsText,
+  noResultsTitle,
 } from '../constants/constants';
 
 // возвращает текущего юзера из localStorage
@@ -25,35 +28,35 @@ function preloader(flag) {
 
 // отображает пустой результат
 function emptyResults(flag) {
-  const noResults = document.querySelector('.no-results');
-  const erorrText = document.querySelector('.no-results__text');
-  const title = document.querySelector('.no-results__title');
   if (flag) {
-    title.classList.add('no-results__title_is-opened');
+    noResultsTitle.classList.add('no-results__title_is-opened');
     noResults.classList.add('no-results_is-opened');
-    erorrText.textContent = '';
-    erorrText.textContent = emptyResaltText;
+    noResultsText.textContent = '';
+    noResultsText.textContent = emptyResaltText;
   } else {
-    title.classList.remove('no-results__title_is-opened');
+    noResultsTitle.classList.remove('no-results__title_is-opened');
     noResults.classList.remove('no-results_is-opened');
-    erorrText.textContent = '';
+    noResultsText.textContent = '';
   }
 }
 
 // отображает результат, если от сервера пришла ошибка
 function errorResults(flag) {
-  const noResults = document.querySelector('.no-results');
-  const erorrText = document.querySelector('.no-results__text');
-  const title = document.querySelector('.no-results__title');
   if (flag) {
-    title.classList.remove('no-results__title_is-opened');
+    noResultsTitle.classList.remove('no-results__title_is-opened');
     noResults.classList.add('no-results_is-opened');
-    erorrText.textContent = '';
-    erorrText.textContent = errorResultText;
+    noResultsText.textContent = '';
+    noResultsText.textContent = errorResultText;
   } else {
-    title.classList.add('no-results__title_is-opened');
+    noResultsTitle.classList.add('no-results__title_is-opened');
     noResults.classList.remove('no-results_is-opened');
-    erorrText.textContent = '';
+    noResultsText.textContent = '';
+  }
+}
+
+function removeAllChild(container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
   }
 }
 
@@ -64,4 +67,5 @@ export {
   preloader,
   emptyResults,
   errorResults,
+  removeAllChild,
 };

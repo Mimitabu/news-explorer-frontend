@@ -6,7 +6,6 @@ import MainApi from '../api/MainApi';
 import NewsApi from '../api/NewsApi';
 import Header from '../components/Header';
 import HeaderMini from '../components/HeaderMini';
-// import { getUser } from '../utils/utils';
 import link from '../../images/save_icon_normal.svg';
 
 // кнопки закрытия трех попапов
@@ -66,7 +65,10 @@ const resultsList = document.querySelector('.results__list');
 const emptyResaltText = 'К сожалению по вашему запросу ничего не найдено';
 const errorResultText = 'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз';
 
-
+// блок no-resalts
+const noResults = document.querySelector('.no-results');
+const noResultsText = document.querySelector('.no-results__text');
+const noResultsTitle = document.querySelector('.no-results__title');
 
 
 export {
@@ -99,4 +101,7 @@ export {
   resultsList,
   emptyResaltText,
   errorResultText,
+  noResults,
+  noResultsText,
+  noResultsTitle,
 };
