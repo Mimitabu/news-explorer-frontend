@@ -9,7 +9,7 @@
 @import url(./__saved-massages/_is-opened/header-mini__saved-massages_is-opened.css);
 @import url(./__logout/header-mini__logout.css);
 @import url(./__logout/_is-opened/header-mini__logout_is-opened.css);
-@import url(./__user-name/header-mini__user-name.css);
+@import url(./__user-name/header-mini__name.css);
 @import url(./__login/header-mini__login.css);
 @import url(./__login/_is-opened/header-mini__login_is-opened.css);
 @import url(./_is-opened/header-mini_is-opened.css);
@@ -25,5 +25,5 @@
   align-items: flex-start;
   justify-content: center;
   display: none;
-  z-index: 10;
+/*  z-index: 10;*/
 }

@@ -6,10 +6,14 @@ import {
   noResultsTitle,
 } from '../constants/constants';
 
+
 // возвращает текущего юзера из localStorage
 function getUser(item) {
   return JSON.parse(localStorage.getItem(item));
 }
+
+// получение профиля юзера из localstorage
+const getProfile = getUser('user');
 
 // удаляет текущего юзера из localStorage
 function deleteUser(item) {
@@ -69,4 +73,5 @@ export {
   emptyResults,
   errorResults,
   removeAllChild,
+  getProfile,
 };

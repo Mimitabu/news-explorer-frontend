@@ -1,8 +1,10 @@
-// import { getProfile } from '../constants/constants';
-import { link } from '../constants/constants';
+import { getProfile } from '../utils/utils';
 
 export default class NewsCard {
   constructor(data, keyWord) {
+    this.hoverIconOn = this.hoverIconOn.bind(this);
+    this.hoverIconOff = this.hoverIconOff.bind(this);
+    this.activeIcon = this.activeIcon.bind(this);
     this.title = data.title;
     this.publishedAt = data.publishedAt;
     this.description = data.description;
@@ -10,13 +12,28 @@ export default class NewsCard {
     this.source = data.source.name;
     this.url = data.url;
     this.cardElement = this.createCard(keyWord);
+    this.icon = this.cardElement.querySelector('.result-card__button-icon');
+    this.iconButton = this.cardElement.querySelector('.result-card__button');
+    this.hoverButton = this.cardElement.querySelector('.result-card__button-warning');
+
   }
 
-  // renderIcon() {
-  //   if (getProfile) {
-  //     this.resultСardButton.removeAttribute('disabled');
-  //   } else if ()
-  // }
+  renderIcon(flag) {
+    if (flag) {
+      this.icon.classList.add('result-card__button-icon_marced');
+    } else {
+      this.icon.classList.remove('result-card__button-icon_marced');
+    }
+  }
+
+  activeIcon(button) {
+    if (getProfile) {
+      button.removeAttribute('disabled');
+    } else {
+      button.setAttribute('disabled', true);
+    }
+  }
+
 
   createCard(userKeyWord) {
     // родительский контейнер
@@ -46,7 +63,7 @@ export default class NewsCard {
     button.classList.add('result-card__button');
     button.setAttribute('disabled', true);
     buttonIcon.classList.add('result-card__button-icon');
-    buttonIcon.style.backgroundImage = `url(${link})`;
+    buttonIcon.classList.add('result-card__button-icon_normal');
 
     cardDescriptionElement.classList.add('result-card__description');
     descriptionData.classList.add('result-card__description-data');
@@ -72,8 +89,23 @@ export default class NewsCard {
     cardDescriptionElement.appendChild(descriptionTitle);
     cardDescriptionElement.appendChild(descriptionAbout);
     cardDescriptionElement.appendChild(descriptionSource);
+    buttonContent.addEventListener('mouseover', this.hoverIconOn);
+    buttonContent.addEventListener('mouseout', this.hoverIconOff);
+    this.activeIcon(button);
 
-    // console.log(placeCardElement);
     return placeCardElement;
+  }
+
+  hoverIconOn() {
+    if (!getProfile) {
+      this.hoverButton.classList.add('result-card__button-warning_is-opened');
+      this.hoverButton.textContent = 'Войдите, что бы сохранять статьи';
+    }
+  }
+
+  hoverIconOff() {
+    if (!getProfile) {
+      this.hoverButton.classList.remove('result-card__button-warning_is-opened');
+    }
   }
 }

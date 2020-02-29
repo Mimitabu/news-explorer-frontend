@@ -3,6 +3,7 @@
 @import url(./__button/result-card__button.css);
 @import url(./__description/result-card__description.css);
 @import url(./__button-icon/result-card__button-icon.css);
+@import url(./__button-icon/_normal/result-card__button-icon_normal.css);
 @import url(./__button-icon/_marced/result-card__button-icon_marced.css);
 @import url(./__button-icon/_favorites/result-card__button-icon_favorites.css);
 @import url(./__description-data/result-card__description-data.css);

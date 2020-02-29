@@ -50,8 +50,7 @@ const newsURL = 'http://newsapi.org/v2/everything?';
 const apiKey = '07180a3ab8d04f088f048cab429a6b29';
 const newsApi = new NewsApi(newsURL, apiKey);
 
-// Кнопка Искать и Показать еще
-const searchButton = document.querySelector('.search__button');
+// Кнопка Показать еще
 const showMoreButton = document.querySelector('.results__more-button');
 
 // счетчик, сколько статей выводить за раз в Результатах поиска
@@ -69,6 +68,8 @@ const errorResultText = 'Во время запроса произошла ош�
 const noResults = document.querySelector('.no-results');
 const noResultsText = document.querySelector('.no-results__text');
 const noResultsTitle = document.querySelector('.no-results__title');
+
+const searchForm = document.forms.search;
 
 
 
@@ -95,7 +96,6 @@ export {
   headerMiniCloseButton,
   newsApi,
   link,
-  searchButton,
   showMoreButton,
   maxCount,
   results,
@@ -105,4 +105,5 @@ export {
   noResults,
   noResultsText,
   noResultsTitle,
+  searchForm,
 };

@@ -24,16 +24,17 @@ import {
   headerMiniOpenButton,
   headerMiniCloseButton,
   newsApi,
-  searchButton,
   showMoreButton,
   maxCount,
   results,
   resultsList,
+  searchForm,
 } from './js/constants/constants';
 
 
 import {
   getUser,
+  getProfile,
   deleteUser,
   preloader,
   emptyResults,
@@ -41,9 +42,6 @@ import {
   removeAllChild,
   // searchFormValidation,
 } from './js/utils/utils';
-
-// получение профиля юзера из localstorage
-const getProfile = getUser('user');
 
 // получаем имя юзера из localstorage
 function getCurrentUser() {
@@ -127,6 +125,7 @@ function signin(event) {
       header.render(true, data.name);
       headerMini.render(true, data.name);
       closeForm();
+      document.location.reload();
     })
     .catch((err) => {
       if (err === 'Unauthorized') {
@@ -145,7 +144,6 @@ function logout() {
 }
 
 let cardElementArray = [];
-
 let from = 0;
 function moreResults() {
   let until = from + maxCount;
@@ -162,10 +160,10 @@ function moreResults() {
 
 
 function cardRender(event) {
+  event.preventDefault();
   cardElementArray = [];
   from = 0;
   removeAllChild(resultsList);
-  event.preventDefault();
   emptyResults(false);
   errorResults(false);
   const searchInput = document.forms.search.elements.keyword;
@@ -218,5 +216,5 @@ logoutButton.addEventListener('click', logout);
 logoutMiniButton.addEventListener('click', logout);
 headerMiniOpenButton.addEventListener('click', openHeaderMini);
 headerMiniCloseButton.addEventListener('click', closeHeaderMini);
-searchButton.addEventListener('click', cardRender);
+searchForm.addEventListener('submit', cardRender);
 showMoreButton.addEventListener('click', moreResults);
