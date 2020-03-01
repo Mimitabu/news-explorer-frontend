@@ -1,20 +1,26 @@
 import { getProfile } from '../utils/utils';
+import { mainApi } from '../constants/constants';
 
 export default class NewsCard {
   constructor(data, keyWord) {
     this._hoverIconOn = this._hoverIconOn.bind(this);
     this._hoverIconOff = this._hoverIconOff.bind(this);
     this.activeIcon = this.activeIcon.bind(this);
+    this._save = this._save.bind(this);
+    this.renderIcon = this.renderIcon.bind(this);
+    this.keyWord = keyWord;
     this.title = data.title;
     this.publishedAt = data.publishedAt;
     this.description = data.description;
     this.urlToImage = data.urlToImage;
     this.source = data.source.name;
     this.url = data.url;
+    this.data = this._trueData(this.publishedAt);
     this.cardElement = this.createCard(keyWord);
     this.icon = this.cardElement.querySelector('.result-card__button-icon');
     this.iconButton = this.cardElement.querySelector('.result-card__button');
     this.hoverButton = this.cardElement.querySelector('.result-card__button-warning');
+    this.iconButton.addEventListener('click', this._save);
   }
 
   _trueData(str) {
@@ -90,7 +96,7 @@ export default class NewsCard {
 
     cardDescriptionElement.classList.add('result-card__description');
     descriptionData.classList.add('result-card__description-data');
-    descriptionData.textContent = this._trueData(this.publishedAt);
+    descriptionData.textContent = this.data;
     descriptionTitle.classList.add('result-card__description-title');
     descriptionTitle.textContent = this.title;
     descriptionAbout.classList.add('result-card__description-about');
@@ -123,12 +129,41 @@ export default class NewsCard {
     if (!getProfile) {
       this.hoverButton.classList.add('result-card__button-warning_is-opened');
       this.hoverButton.textContent = 'Войдите, что бы сохранять статьи';
+      this.icon.classList.add('result-card__button-icon_hover');
+    } else if (getProfile && this.icon.classList
+      .contains('result-card__button-icon_marced')) {
+      this.icon.classList.remove('result-card__button-icon_hover');
+    } else if (getProfile) {
+      this.icon.classList.add('result-card__button-icon_hover');
     }
   }
 
   _hoverIconOff() {
     if (!getProfile) {
       this.hoverButton.classList.remove('result-card__button-warning_is-opened');
+    }
+    this.icon.classList.remove('result-card__button-icon_hover');
+  }
+
+  _save() {
+    if (!this.icon.classList.contains('result-card__button-icon_marced')) {
+      mainApi.createArticle(this.keyWord, this.title, this.description,
+        this.data, this.source, this.url, this.urlToImage)
+        .then((data) => {
+          this.renderIcon(true);
+          this.cardElement.setAttribute('id', data.data._id);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      mainApi.removeArticle(this.cardElement.getAttribute('id'))
+        .then((data) => {
+          this.renderIcon(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   }
 }
