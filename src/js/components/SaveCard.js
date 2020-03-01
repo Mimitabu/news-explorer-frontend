@@ -1,8 +1,10 @@
 import { mainApi } from '../constants/constants';
 
 export default class SaveCard {
-  conctructor(data) {
+  constructor(data) {
     this._delete = this._delete.bind(this);
+    this._hoverOn = this._hoverOn.bind(this);
+    this._hoverOff = this._hoverOff.bind(this);
     this.keyword = data.keyword;
     this.title = data.title;
     this.text = data.text;
@@ -15,7 +17,8 @@ export default class SaveCard {
     this.hoverButton = this.cardElement
       .querySelector('.result-card__button-warning');
     this.removeButton = this.cardElement
-      .querySelector('.result-card__button')
+      .querySelector('.result-card__button');
+    this.removeButton
       .addEventListener('click', this._delete);
   }
 
@@ -42,8 +45,10 @@ export default class SaveCard {
     placeCardElement.setAttribute('id', this.id);
 
     cardImageElement.classList.add('result-card__image');
+    cardImageElement.classList.add('result-card__image_favorites');
     cardImageElement.style.backgroundImage = `url(${this.image})`;
-    keyWordElement.classList.add('.result-card__key-word');
+    keyWordElement.classList.add('result-card__key-word');
+    keyWordElement.textContent = this.keyword;
     buttonContent.classList.add('result-card__button-content');
     buttonWarning.classList.add('result-card__button-warning');
     button.classList.add('result-card__button');
@@ -65,8 +70,8 @@ export default class SaveCard {
     placeCardElement.appendChild(cardImageElement);
     placeCardElement.appendChild(cardDescriptionElement);
 
-    cardImageElement.appendChild(buttonContent);
     cardImageElement.appendChild(keyWordElement);
+    cardImageElement.appendChild(buttonContent);
     buttonContent.appendChild(buttonWarning);
     buttonContent.appendChild(button);
     button.appendChild(buttonIcon);
@@ -93,6 +98,7 @@ export default class SaveCard {
 
   _hoverOn() {
     this.hoverButton.classList.add('result-card__button-warning_is-opened');
+    this.hoverButton.textContent = 'Убрать из сохраненных';
   }
 
   _hoverOff() {
