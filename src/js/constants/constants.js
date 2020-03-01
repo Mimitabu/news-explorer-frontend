@@ -1,7 +1,4 @@
-import Popup from '../components/Popup';
 import Button from '../components/Button';
-import Form from '../components/Form';
-import FormExtend from '../components/FormExtend';
 import MainApi from '../api/MainApi';
 import NewsApi from '../api/NewsApi';
 import Header from '../components/Header';
@@ -31,11 +28,6 @@ const logoutMiniButton = new Button(document.querySelector('.header-mini__logout
 // кнопка открытия/закрытия header-mini
 const headerMiniOpenButton = new Button(document.querySelector('.header__hide-nav'));
 const headerMiniCloseButton = new Button(document.querySelector('.header-mini__hide-nav'));
-
-// попап и форма регистрации
-const popup = new Popup(document.querySelector('.popup'));
-const formSignin = new Form(document.forms.signin);
-const formSignup = new FormExtend(document.forms.signup);
 
 // шапка приложения в 2-х состояниях
 const header = new Header(document.querySelector('.header'));
@@ -80,10 +72,7 @@ export {
   loginButton,
   signupButton,
   signinButton,
-  popup,
   mainApi,
-  formSignin,
-  formSignup,
   popupButtonSignup,
   popupButtonSignin,
   afterSignupButton,

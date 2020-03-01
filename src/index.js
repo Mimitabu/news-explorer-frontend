@@ -1,6 +1,9 @@
 import './style.css';
 import NewsCard from './js/components/NewsCard';
 import NewsCardList from './js/components/NewsCardList';
+import Popup from './js/components/Popup';
+import Form from './js/components/Form';
+import FormExtend from './js/components/FormExtend';
 
 import {
   closePopupButonIn,
@@ -9,10 +12,7 @@ import {
   loginButton,
   signupButton,
   signinButton,
-  popup,
   mainApi,
-  formSignin,
-  formSignup,
   popupButtonSignup,
   popupButtonSignin,
   afterSignupButton,
@@ -33,14 +33,12 @@ import {
 
 
 import {
-  getUser,
   getProfile,
   deleteUser,
   preloader,
   emptyResults,
   errorResults,
   removeAllChild,
-  // searchFormValidation,
 } from './js/utils/utils';
 
 // получаем имя юзера из localstorage
@@ -55,6 +53,11 @@ function getCurrentUser() {
 // рендерим header
 header.render(getProfile, getCurrentUser());
 headerMini.render(getProfile, getCurrentUser());
+
+// попап и форма регистрации
+const popup = new Popup(document.querySelector('.popup'));
+const formSignin = new Form(document.forms.signin);
+const formSignup = new FormExtend(document.forms.signup);
 
 
 const formDOMSignin = document.forms.signin;
