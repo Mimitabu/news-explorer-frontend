@@ -2,8 +2,8 @@ import { getProfile } from '../utils/utils';
 
 export default class NewsCard {
   constructor(data, keyWord) {
-    this.hoverIconOn = this.hoverIconOn.bind(this);
-    this.hoverIconOff = this.hoverIconOff.bind(this);
+    this._hoverIconOn = this._hoverIconOn.bind(this);
+    this._hoverIconOff = this._hoverIconOff.bind(this);
     this.activeIcon = this.activeIcon.bind(this);
     this.title = data.title;
     this.publishedAt = data.publishedAt;
@@ -15,7 +15,30 @@ export default class NewsCard {
     this.icon = this.cardElement.querySelector('.result-card__button-icon');
     this.iconButton = this.cardElement.querySelector('.result-card__button');
     this.hoverButton = this.cardElement.querySelector('.result-card__button-warning');
+  }
 
+  _trueData(str) {
+    const oneData = str.substr(0, 10);
+    const twoData = oneData.split('-');
+    const year = twoData[0];
+    const month = twoData[1];
+    const day = twoData[2];
+    const allMonth = [
+      'января',
+      'февраля',
+      'марта',
+      'апреля',
+      'мая',
+      'июня',
+      'июля',
+      'августа',
+      'сентября',
+      'октября',
+      'ноября',
+      'декабря',
+    ];
+    const data = `${day} ${allMonth[Number(month) - 1]}, ${year}`;
+    return data;
   }
 
   renderIcon(flag) {
@@ -67,7 +90,7 @@ export default class NewsCard {
 
     cardDescriptionElement.classList.add('result-card__description');
     descriptionData.classList.add('result-card__description-data');
-    descriptionData.textContent = this.publishedAt;
+    descriptionData.textContent = this._trueData(this.publishedAt);
     descriptionTitle.classList.add('result-card__description-title');
     descriptionTitle.textContent = this.title;
     descriptionAbout.classList.add('result-card__description-about');
@@ -89,21 +112,21 @@ export default class NewsCard {
     cardDescriptionElement.appendChild(descriptionTitle);
     cardDescriptionElement.appendChild(descriptionAbout);
     cardDescriptionElement.appendChild(descriptionSource);
-    buttonContent.addEventListener('mouseover', this.hoverIconOn);
-    buttonContent.addEventListener('mouseout', this.hoverIconOff);
+    buttonContent.addEventListener('mouseover', this._hoverIconOn);
+    buttonContent.addEventListener('mouseout', this._hoverIconOff);
     this.activeIcon(button);
 
     return placeCardElement;
   }
 
-  hoverIconOn() {
+  _hoverIconOn() {
     if (!getProfile) {
       this.hoverButton.classList.add('result-card__button-warning_is-opened');
       this.hoverButton.textContent = 'Войдите, что бы сохранять статьи';
     }
   }
 
-  hoverIconOff() {
+  _hoverIconOff() {
     if (!getProfile) {
       this.hoverButton.classList.remove('result-card__button-warning_is-opened');
     }
