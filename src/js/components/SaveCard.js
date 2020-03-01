@@ -64,7 +64,7 @@ export default class SaveCard {
     descriptionAbout.textContent = this.text;
     descriptionSource.classList.add('result-card__description-source');
     descriptionSource.textContent = this.source;
-    descriptionSource.setAttribute('href', this.image);
+    descriptionSource.setAttribute('href', this.link);
     descriptionSource.setAttribute('target', '_blank');
 
     placeCardElement.appendChild(cardImageElement);
