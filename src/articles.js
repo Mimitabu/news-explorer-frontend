@@ -16,6 +16,17 @@ import {
   logoutMiniButton,
   resultsList,
   mainApi,
+  favoritesUserName,
+  favoritesKeyWords,
+  favoritesGlobalCount,
+  favoritesDifferent,
+  favoritesWords,
+  favoritesOthers,
+  favoritesOthersCount,
+  NO,
+  SAVE_ONE,
+  SAVE_TWO,
+  SAVE_THREE,
 } from './js/constants/constants';
 
 function start() {
@@ -71,7 +82,6 @@ function start() {
   const objKeys = {};
   const sortKeys = {};
 
-
   function putKeys(data) {
     data.forEach((item) => {
       if (!objKeys.hasOwnProperty(item.keyword)) {
@@ -89,18 +99,66 @@ function start() {
     }).forEach(function (v) { sortKeys[v] = obj[v]; });
   }
 
+
+
+  function renderTextBlock(array, obj) {
+    favoritesUserName.textContent = getCurrentUser();
+    // favoritesKeyWords.textContent = 'По ключевым словам: ';
+    if (Object.keys(obj).length === 0) {
+      favoritesGlobalCount.textContent = NO;
+      favoritesDifferent.textContent = SAVE_THREE;
+      favoritesKeyWords.textContent = '';
+    } else if (Object.keys(obj).length === 1) {
+      favoritesGlobalCount.textContent = array.length;
+      favoritesDifferent.textContent = SAVE_ONE;
+      favoritesWords.textContent = Object.keys(obj);
+      favoritesOthers.textContent = '';
+      favoritesOthersCount.textContent = '';
+    } else if (Object.keys(obj).length === 2) {
+      favoritesGlobalCount.textContent = array.length;
+      favoritesDifferent.textContent = SAVE_TWO;
+      favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
+      favoritesOthers.textContent = '';
+      favoritesOthersCount.textContent = '';
+    } else if (Object.keys(obj).length === 3) {
+      favoritesGlobalCount.textContent = array.length;
+      favoritesDifferent.textContent = SAVE_TWO;
+      favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}, ${Object.keys(obj)[2]}`;
+      favoritesOthers.textContent = '';
+      favoritesOthersCount.textContent = '';
+    } else if (Object.keys(obj).length === 4) {
+      favoritesGlobalCount.textContent = `и ${array.length} другим`;
+      // favoritesKeyWords.textContent = 'По ключевым словам: ';
+      favoritesDifferent.textContent = SAVE_TWO;
+      favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
+      favoritesOthersCount.textContent = (Object.keys(obj).length - 2);
+    } else if (Object.keys(obj).length > 4) {
+      favoritesGlobalCount.textContent = `и ${array.length} другим`;
+      // favoritesKeyWords.textContent = 'По ключевым словам: ';
+      favoritesDifferent.textContent = SAVE_THREE;
+      favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
+      favoritesOthersCount.textContent = (Object.keys(obj).length - 2);
+      // favoritesWords.textContent = 'dskfhdsjkhd';
+    }
+  }
+
   mainApi.getArticles()
     .then((data) => {
       const array = data.data;
       cardRender(array);
       putKeys(array);
       sort(objKeys);
+      renderTextBlock(array, sortKeys);
       console.log('objKeys', objKeys);
       console.log('sortKeys', sortKeys);
+      console.log('length,', (array.length));
+      console.log(Object.keys(sortKeys)[0]);
     })
     .catch((err) => {
       console.log(err);
     });
+
+
 
 
 

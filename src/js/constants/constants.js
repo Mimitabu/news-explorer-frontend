@@ -61,8 +61,23 @@ const noResults = document.querySelector('.no-results');
 const noResultsText = document.querySelector('.no-results__text');
 const noResultsTitle = document.querySelector('.no-results__title');
 
+// форма Искать
 const searchForm = document.forms.search;
 
+// блок favorites, константы для текста
+const favoritesUserName = document.querySelector('.favorites__user-name');
+const favoritesGlobalCount = document.querySelector('.favorites__global-count');
+const favoritesDifferent = document.querySelector('.favorites__different');
+const favoritesKeyWords = document.querySelector('.favorites__key-words');
+const favoritesWords = document.querySelector('.favorites__words');
+const favoritesOthers = document.querySelector('.favorites__others');
+const favoritesOthersCount = document.querySelector('.favorites__others-count');
+
+// тексты для articles
+const NO = 'нет';
+const SAVE_ONE = ' сохраненная статья';
+const SAVE_TWO = ' сохраненные статьи';
+const SAVE_THREE = ' сохраненных статей';
 
 
 export {
@@ -95,4 +110,15 @@ export {
   noResultsText,
   noResultsTitle,
   searchForm,
+  favoritesUserName,
+  favoritesKeyWords,
+  favoritesGlobalCount,
+  favoritesDifferent,
+  favoritesWords,
+  favoritesOthers,
+  favoritesOthersCount,
+  NO,
+  SAVE_ONE,
+  SAVE_TWO,
+  SAVE_THREE,
 };

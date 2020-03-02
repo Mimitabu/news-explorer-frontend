@@ -2,6 +2,8 @@
 @import url(./__title/favorites__title.css);
 @import url(./__key-words/favorites__key-words.css);
 @import url(./__span/favorites__span.css);
+@import url(./__words/favorites__words.css);
+
 
 .favorites {
   width: calc(100% - 208px);
