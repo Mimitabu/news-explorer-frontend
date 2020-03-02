@@ -62,7 +62,7 @@ function start() {
     headerMini.render(false, '');
   }
 
-
+  // функция рендера карточек
   function cardRender(initialCards) {
     const results = document.querySelector('.results');
     if (initialCards.length === 0) {
@@ -79,9 +79,12 @@ function start() {
     }
   }
 
+  // пустые объекты для рендера
   const objKeys = {};
   const sortKeys = {};
 
+  // получения объекта вида {'ключевое слово': 'count'},
+  // где count - число повторений
   function putKeys(data) {
     data.forEach((item) => {
       if (!objKeys.hasOwnProperty(item.keyword)) {
@@ -93,13 +96,15 @@ function start() {
     });
   }
 
+  // сортировка объекта по значению ключа
+  // по убыванию
   function sort(obj) {
     Object.keys(obj).sort(function (a, b) {
       return obj[b] - obj[a];
     }).forEach(function (v) { sortKeys[v] = obj[v]; });
   }
 
-
+  // выбор падежа для 'сохраненных статей'
   function renerCase(array) {
     if (array.length === 1) {
       favoritesDifferent.textContent = SAVE_ONE;
@@ -111,47 +116,35 @@ function start() {
     }
   }
 
-
+  // функция рендера текстового блока
   function renderTextBlock(array, obj) {
     favoritesUserName.textContent = getCurrentUser();
     if (Object.keys(obj).length === 0) {
       favoritesGlobalCount.textContent = NO;
-      // favoritesDifferent.textContent = SAVE_THREE;
       favoritesKeyWords.textContent = '';
     } else if (Object.keys(obj).length === 1) {
       favoritesGlobalCount.textContent = array.length;
-      // favoritesDifferent.textContent = SAVE_ONE;
       favoritesWords.textContent = Object.keys(obj);
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
     } else if (Object.keys(obj).length === 2) {
       favoritesGlobalCount.textContent = array.length;
-      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
     } else if (Object.keys(obj).length === 3) {
       favoritesGlobalCount.textContent = array.length;
-      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}, ${Object.keys(obj)[2]}`;
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
-    } else if (Object.keys(obj).length === 4) {
+    } else if (Object.keys(obj).length >= 4) {
       favoritesGlobalCount.textContent = array.length;
-      // favoritesKeyWords.textContent = 'По ключевым словам: ';
-      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
-      favoritesOthersCount.textContent = `и ${(Object.keys(obj).length - 2)} другим`;
-    } else if (Object.keys(obj).length > 4) {
-      favoritesGlobalCount.textContent = array.length;
-      // favoritesKeyWords.textContent = 'По ключевым словам: ';
-      // favoritesDifferent.textContent = SAVE_THREE;
-      favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
-      favoritesOthersCount.textContent = `и ${(Object.keys(obj).length - 2)} другим`;
-      // favoritesWords.textContent = 'dskfhdsjkhd';
+      favoritesOthersCount.textContent = ` и ${(Object.keys(obj).length - 2)} другим`;
     }
   }
 
+  // рендер текстового блока и карточек
   mainApi.getArticles()
     .then((data) => {
       const array = data.data;
@@ -160,30 +153,21 @@ function start() {
       sort(objKeys);
       renerCase(array);
       renderTextBlock(array, sortKeys);
-      console.log('objKeys', objKeys);
-      console.log('sortKeys', sortKeys);
-      console.log('length,', (array.length));
-      console.log(Object.keys(sortKeys)[0]);
     })
     .catch((err) => {
       console.log(err);
     });
 
-
-
-
-
-
+  // слушатели событий
   headerMiniOpenButton.addEventListener('click', openHeaderMini);
   headerMiniCloseButton.addEventListener('click', closeHeaderMini);
   logoutButton.addEventListener('click', logout);
   logoutMiniButton.addEventListener('click', logout);
 }
 
+// перекинет на главную, если неавторизованный пользователь прошел по ссылке
 if (getProfile) {
   start();
 } else {
   window.location.href = 'index.html';
 }
-
-console.log('working');

@@ -29,6 +29,9 @@ import {
   results,
   resultsList,
   searchForm,
+  NOT_UNIQUE_USER,
+  WRONG,
+  NOT_REGISTERED,
 } from './js/constants/constants';
 
 
@@ -60,11 +63,11 @@ const formSignin = new Form(document.forms.signin);
 const formSignup = new FormExtend(document.forms.signup);
 
 
-const formDOMSignin = document.forms.signin;
-const formDOMSignup = document.forms.signup;
-
+// пустой массив и счетчик, нужные для работы moreResults()
 let cardElementArray = [];
 let from = 0;
+
+// рендер карточек, в т.ч. по кнопке Показать ещe
 function moreResults() {
   let until = from + maxCount;
   if (until > cardElementArray.length) {
@@ -78,7 +81,7 @@ function moreResults() {
   return from;
 }
 
-
+// рендер карточек и ошибок
 function cardRender(event) {
   event.preventDefault();
   cardElementArray = [];
@@ -90,14 +93,12 @@ function cardRender(event) {
   preloader(true);
   newsApi.getNews(searchInput.value)
     .then((data) => {
-      console.log(data);
       const dataArticles = data.articles;
       if (dataArticles.length === 0) {
         emptyResults(true);
       } else {
         dataArticles.forEach((item) => {
           const { cardElement } = new NewsCard(item, searchInput.value);
-          // cardElement.activeIcon();
           cardElementArray.push(cardElement);
           results.classList.add('results_is-opened');
         });
@@ -105,12 +106,10 @@ function cardRender(event) {
       preloader(false);
       moreResults();
       searchInput.value = '';
-      console.log(cardElementArray);
       return cardElementArray;
     })
-    .catch((err) => {
+    .catch(() => {
       errorResults(true);
-      console.log(err);
     })
     .finally(() => {
       preloader(false);
@@ -153,21 +152,25 @@ function openFormSuccessSignup() {
 // закрытие попапа
 function closeForm() {
   popup.close();
+  formSignin.clear();
+  formSignin.clearErrors();
+  formSignup.clear();
+  formSignup.clearErrors();
 }
 
 // регистрация пользователя
 function signup(event) {
   event.preventDefault();
-  const email = formDOMSignup.elements.email.value;
-  const password = formDOMSignup.elements.password.value;
-  const name = formDOMSignup.elements.name.value;
+  const email = document.forms.signup.elements.email.value;
+  const password = document.forms.signup.elements.password.value;
+  const name = document.forms.signup.elements.name.value;
   mainApi.signup(email, password, name)
     .then(() => {
       openFormSuccessSignup();
     })
     .catch((err) => {
       if (err === 'Bad Request') {
-        formSignup.setServerError('Такой пользователь уже существует');
+        formSignup.setServerError(NOT_UNIQUE_USER);
       }
     });
 }
@@ -175,22 +178,20 @@ function signup(event) {
 // вход пользователя
 function signin(event) {
   event.preventDefault();
-  const email = formDOMSignin.elements.email.value;
-  const password = formDOMSignin.elements.password.value;
+  const email = document.forms.signin.elements.email.value;
+  const password = document.forms.signin.elements.password.value;
   mainApi.signin(email, password)
     .then((data) => {
       header.render(true, data.name);
       headerMini.render(true, data.name);
       closeForm();
       document.location.reload();
-      // removeAllChild(resultsList);
-      // moreResults();
     })
     .catch((err) => {
       if (err === 'Unauthorized') {
-        formSignin.setServerError('Неверный логин или пароль');
+        formSignin.setServerError(WRONG);
       } else {
-        formSignin.setServerError('Пользователь не зарегистрирован');
+        formSignin.setServerError(NOT_REGISTERED);
       }
     });
 }
@@ -201,12 +202,6 @@ function logout() {
   header.render(false, '');
   headerMini.render(false, '');
 }
-
-
-
-
-
-
 
 
 // слушатели событий

@@ -79,6 +79,11 @@ const SAVE_ONE = ' сохраненная статья';
 const SAVE_TWO = ' сохраненные статьи';
 const SAVE_THREE = ' сохраненных статей';
 
+// тексты ошибок форм
+const NOT_UNIQUE_USER = 'Такой пользователь уже существует';
+const WRONG = 'Неверный логин или пароль';
+const NOT_REGISTERED = 'Пользователь не зарегистрирован';
+
 
 export {
   closePopupButonIn,
@@ -121,4 +126,7 @@ export {
   SAVE_ONE,
   SAVE_TWO,
   SAVE_THREE,
+  NOT_UNIQUE_USER,
+  WRONG,
+  NOT_REGISTERED,
 };

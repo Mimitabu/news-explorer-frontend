@@ -4,8 +4,8 @@ export default class Form {
   constructor(domElement) {
     this.domElement = domElement;
     this._validateForm = this._validateForm.bind(this);
-    this._clearErrors();
-    this._clear();
+    this.clearErrors();
+    this.clear();
     this.domElement
       .addEventListener('input', this._validateForm);
   }
@@ -65,7 +65,7 @@ export default class Form {
   }
 
   // очищает сообщения об ошибках
-  _clearErrors() {
+  clearErrors() {
     this.domElement
       .querySelector('.popup__error-email')
       .textContent = '';
@@ -78,7 +78,7 @@ export default class Form {
   }
 
   // очищает поля формы
-  _clear() {
+  clear() {
     this.domElement.email.value = '';
     this.domElement.password.value = '';
   }

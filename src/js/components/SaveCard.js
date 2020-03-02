@@ -22,6 +22,7 @@ export default class SaveCard {
       .addEventListener('click', this._delete);
   }
 
+  // создание карточки
   createCard() {
     // родительский контейнер
     const placeCardElement = document.createElement('div');
@@ -86,6 +87,7 @@ export default class SaveCard {
     return placeCardElement;
   }
 
+  // удаление карточки
   _delete(event) {
     mainApi.removeArticle(this.cardElement.getAttribute('id'))
       .then(() => {
@@ -96,6 +98,7 @@ export default class SaveCard {
       });
   }
 
+  // отображение сообщения рядом с корзиной
   _hoverOn() {
     this.hoverButton.classList.add('result-card__button-warning_is-opened');
     this.hoverButton.textContent = 'Убрать из сохраненных';

@@ -23,6 +23,7 @@ export default class NewsCard {
     this.iconButton.addEventListener('click', this._save);
   }
 
+  // перевод даты в правильный формат
   _trueData(str) {
     const oneData = str.substr(0, 10);
     const twoData = oneData.split('-');
@@ -47,6 +48,7 @@ export default class NewsCard {
     return data;
   }
 
+  // рендер иконки сохранения
   renderIcon(flag) {
     if (flag) {
       this.icon.classList.add('result-card__button-icon_marced');
@@ -55,6 +57,7 @@ export default class NewsCard {
     }
   }
 
+  // активация иконки сохранения
   activeIcon(button) {
     if (getProfile) {
       button.removeAttribute('disabled');
@@ -63,7 +66,7 @@ export default class NewsCard {
     }
   }
 
-
+  // создание карточки
   createCard(userKeyWord) {
     // родительский контейнер
     const placeCardElement = document.createElement('div');
@@ -125,6 +128,7 @@ export default class NewsCard {
     return placeCardElement;
   }
 
+  // сообщение сбоку иконки сохранения + заливка черным при наведении
   _hoverIconOn() {
     if (!getProfile) {
       this.hoverButton.classList.add('result-card__button-warning_is-opened');
@@ -145,6 +149,7 @@ export default class NewsCard {
     this.icon.classList.remove('result-card__button-icon_hover');
   }
 
+  // сохранение/удаление карточки
   _save() {
     if (!this.icon.classList.contains('result-card__button-icon_marced')) {
       mainApi.createArticle(this.keyWord, this.title, this.description,

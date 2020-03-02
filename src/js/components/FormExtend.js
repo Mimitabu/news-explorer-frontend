@@ -4,8 +4,8 @@ import Form from './Form';
 export default class FormExtend extends Form {
   constructor(domElement) {
     super(domElement);
-    this._clear();
-    this._clearErrors();
+    this.clear();
+    this.clearErrors();
   }
 
   // добавляет форме ошибку, пришедшую с сервера
@@ -50,7 +50,7 @@ export default class FormExtend extends Form {
   }
 
   // очищает сообщения об ошибках
-  _clearErrors() {
+  clearErrors() {
     this.domElement
       .querySelector('.popup__error-name')
       .textContent = '';
@@ -66,7 +66,7 @@ export default class FormExtend extends Form {
   }
 
   // очищает поля формы
-  _clear() {
+  clear() {
     this.domElement.email.value = '';
     this.domElement.password.value = '';
     this.domElement.name.value = '';
