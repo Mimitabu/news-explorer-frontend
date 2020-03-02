@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width,
    initial-scale=1.0">
       <title>News-explorer</title>
-      <link rel="stylesheet" href="style.14ccc80564525e1ec999.css?9d85c7bc2fa8bd7df9e3">
+      <link rel="stylesheet" href="style.3b101dcb7dddd9e641ae.css?de7f7151d34c10034584">
       <meta name='author' content='Marie Slavina'>
 </head>
 <body class="body">
@@ -18,113 +18,41 @@
         <nav class="header__nav">
           <a href="./index.html" class="header__link header__link_black header__main header__main_black">Главная</a>
           <a href="./articles.html" class="header__link header__link_black header__saved-massages header__saved-massages_black header__saved-massages_is-open">Сохранённые статьи</a>
-          <div class="header__logout header__logout_black header__logout_is-opened">
+          <a href="./index.html" class="header__logout header__logout_black header__logout_is-opened">
             <span class="header__link header__link_black header__user-name ">Грета</span>
             <img class="header__exit" src="./images/logout_black.svg" alt="exit logo">
-          </div>
+          </a>
           <span class="header__link header__link_black header__login">Авторизоваться</span>
         </nav>
       </div>
   </header>
 
+    <header class="header-mini">
+      <div class="header-mini__items">
+        <div class="header-mini__up">
+          <h2 class="header-mini__title">NewsExplorer</h2>
+          <img class="header-mini__hide-nav" src="./images/close-mid.svg" alt="close icon">
+        </div>
+        <nav class="header-mini__nav">
+          <a href="./index.html" class="header-mini__link header-mini__main">Главная</a>
+          <a href="./articles.html" class="header-mini__link header-mini__saved-massages header-mini__saved-massages_is-opened">Сохранённые статьи</a>
+          <a href="./index.html" class="header-mini__logout header-mini__logout_is-opened">
+            <span class="header-mini__link header-mini__user-name">Грета</span>
+            <img class="header-mini__exit" src="./images/logout.svg" alt="exit logo">
+          </a>
+          <span class="header-mini__link header-mini__login">Авторизоваться</span>
+        </nav>
+      </div>
+    </header>
+
     <section class="favorites">
       <span class="favorites__text">Сохранённые статьи</span>
-      <h3 class="favorites__title">Грета, у вас 5 сохранённых статей</h3>
-      <p class="favorites__key-words">По ключевым словам: <span class="favorites__span"> Природа, Тайга</span> и <span class="favorites__span">2 другим</span></p>
+      <h3 class="favorites__title"><span class="favorites__user-name">Грета</span> , у вас <span class="favorites__global-count"></span><span class="favorites__different"> сохранённых статей</span></h3>
+      <p class="favorites__key-words">По ключевым словам: <span class="favorites__words">Природа, Тайга</span><span class="favorites__others"><span class="favorites__others-count"></span></span></p>
     </section>
 
     <section class="results results_is-opened">
       <div class="results__list results__list_favorites">
-
-        <div class="result-card">
-          <div class="result-card__image result-card__image_favorites" style="background-image: url(./images/image_04.jpg);">
-            <div class="result-card__key-word">Природа</div>
-            <div class="result-card__button-content">
-              <div class="result-card__button-warning">Убрать из сохранённых</div>
-              <div class="result-card__button">
-                <div class="result-card__button-icon result-card__button-icon_favorites"></div>
-              </div>
-            </div>
-          </div>
-          <div class="result-card__description">
-            <p class="result-card__description-data">2 августа, 2019</p>
-            <h3 class="result-card__description-title">Национальное достояние – парки</h3>
-            <p class="result-card__description-about">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          </div>
-          <p class="result-card__description-source">Дзен</p>
-        </div>
-
-        <div class="result-card">
-          <div class="result-card__image result-card__image_favorites" style="background-image: url(./images/image_05.jpg);">
-            <div class="result-card__key-word">Природа</div>
-            <div class="result-card__button-content">
-              <div class="result-card__button-warning result-card__button-warning_is-opened">Убрать из сохранённых</div>
-              <div class="result-card__button">
-                <div class="result-card__button-icon result-card__button-icon_favorites"></div>
-              </div>
-            </div>
-          </div>
-          <div class="result-card__description">
-            <p class="result-card__description-data">2 августа, 2019</p>
-            <h3 class="result-card__description-title">Лесные огоньки: история одной фотографии</h3>
-            <p class="result-card__description-about">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-          </div>
-          <p class="result-card__description-source">Афиша</p>
-        </div>
-
-        <div class="result-card">
-          <div class="result-card__image result-card__image_favorites" style="background-image: url(./images/image_06.jpg);">
-            <div class="result-card__key-word">Тайга</div>
-            <div class="result-card__button-content">
-              <div class="result-card__button-warning">Убрать из сохранённых</div>
-              <div class="result-card__button">
-                <div class="result-card__button-icon result-card__button-icon_favorites"></div>
-              </div>
-            </div>
-          </div>
-          <div class="result-card__description">
-            <p class="result-card__description-data">2 августа, 2019</p>
-            <h3 class="result-card__description-title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="result-card__description-about">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-          </div>
-          <p class="result-card__description-source">Медиазона</p>
-        </div>
-
-        <div class="result-card">
-          <div class="result-card__image result-card__image_favorites" style="background-image: url(./images/image_04.jpg);">
-            <div class="result-card__key-word">Парки</div>
-            <div class="result-card__button-content">
-              <div class="result-card__button-warning">Убрать из сохранённых</div>
-              <div class="result-card__button">
-                <div class="result-card__button-icon result-card__button-icon_favorites"></div>
-              </div>
-            </div>
-          </div>
-          <div class="result-card__description">
-            <p class="result-card__description-data">2 августа, 2019</p>
-            <h3 class="result-card__description-title">Национальное достояние – парки</h3>
-            <p class="result-card__description-about">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складываться система национальных парков – охраняемых территорий, где и сегодня каждый может приобщиться к природе.</p>
-          </div>
-          <p class="result-card__description-source">Дзен</p>
-        </div>
-
-        <div class="result-card">
-          <div class="result-card__image result-card__image_favorites" style="background-image: url(./images/image_05.jpg);">
-            <div class="result-card__key-word">Фотография</div>
-            <div class="result-card__button-content">
-              <div class="result-card__button-warning">Убрать из сохранённых</div>
-              <div class="result-card__button">
-                <div class="result-card__button-icon result-card__button-icon_favorites"></div>
-              </div>
-            </div>
-          </div>
-          <div class="result-card__description">
-            <p class="result-card__description-data">2 августа, 2019</p>
-            <h3 class="result-card__description-title">Лесные огоньки: история одной фотографии</h3>
-            <p class="result-card__description-about">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных чудес природы.</p>
-          </div>
-          <p class="result-card__description-source">Афиша</p>
-        </div>
       </div>
     </section>
 
@@ -168,6 +96,6 @@
 
 
   </div>
-      <script src="main.324afe1f2e54b45cd64a.js?9d85c7bc2fa8bd7df9e3"></script>
+      <script src="articles.58872c202e8992c4e2f7.js?de7f7151d34c10034584"></script>
 </body>
 </html>
