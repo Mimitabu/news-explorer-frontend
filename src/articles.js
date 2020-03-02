@@ -100,44 +100,54 @@ function start() {
   }
 
 
+  function renerCase(array) {
+    if (array.length === 1) {
+      favoritesDifferent.textContent = SAVE_ONE;
+    } else if (array.length === 2 || array.length === 3
+      || array.length === 4) {
+      favoritesDifferent.textContent = SAVE_TWO;
+    } else if (array.length > 5 || array.length === 0) {
+      favoritesDifferent.textContent = SAVE_THREE;
+    }
+  }
+
 
   function renderTextBlock(array, obj) {
     favoritesUserName.textContent = getCurrentUser();
-    // favoritesKeyWords.textContent = 'По ключевым словам: ';
     if (Object.keys(obj).length === 0) {
       favoritesGlobalCount.textContent = NO;
-      favoritesDifferent.textContent = SAVE_THREE;
+      // favoritesDifferent.textContent = SAVE_THREE;
       favoritesKeyWords.textContent = '';
     } else if (Object.keys(obj).length === 1) {
       favoritesGlobalCount.textContent = array.length;
-      favoritesDifferent.textContent = SAVE_ONE;
+      // favoritesDifferent.textContent = SAVE_ONE;
       favoritesWords.textContent = Object.keys(obj);
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
     } else if (Object.keys(obj).length === 2) {
       favoritesGlobalCount.textContent = array.length;
-      favoritesDifferent.textContent = SAVE_TWO;
+      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
     } else if (Object.keys(obj).length === 3) {
       favoritesGlobalCount.textContent = array.length;
-      favoritesDifferent.textContent = SAVE_TWO;
+      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}, ${Object.keys(obj)[2]}`;
       favoritesOthers.textContent = '';
       favoritesOthersCount.textContent = '';
     } else if (Object.keys(obj).length === 4) {
-      favoritesGlobalCount.textContent = `и ${array.length} другим`;
+      favoritesGlobalCount.textContent = array.length;
       // favoritesKeyWords.textContent = 'По ключевым словам: ';
-      favoritesDifferent.textContent = SAVE_TWO;
+      // favoritesDifferent.textContent = SAVE_TWO;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
-      favoritesOthersCount.textContent = (Object.keys(obj).length - 2);
+      favoritesOthersCount.textContent = `и ${(Object.keys(obj).length - 2)} другим`;
     } else if (Object.keys(obj).length > 4) {
-      favoritesGlobalCount.textContent = `и ${array.length} другим`;
+      favoritesGlobalCount.textContent = array.length;
       // favoritesKeyWords.textContent = 'По ключевым словам: ';
-      favoritesDifferent.textContent = SAVE_THREE;
+      // favoritesDifferent.textContent = SAVE_THREE;
       favoritesWords.textContent = `${Object.keys(obj)[0]}, ${Object.keys(obj)[1]}`;
-      favoritesOthersCount.textContent = (Object.keys(obj).length - 2);
+      favoritesOthersCount.textContent = `и ${(Object.keys(obj).length - 2)} другим`;
       // favoritesWords.textContent = 'dskfhdsjkhd';
     }
   }
@@ -148,6 +158,7 @@ function start() {
       cardRender(array);
       putKeys(array);
       sort(objKeys);
+      renerCase(array);
       renderTextBlock(array, sortKeys);
       console.log('objKeys', objKeys);
       console.log('sortKeys', sortKeys);
