@@ -97,6 +97,7 @@ function cardRender(event) {
       if (dataArticles.length === 0) {
         emptyResults(true);
       } else {
+        showMoreButton.classList.add('results__more-button_is-opened');
         dataArticles.forEach((item) => {
           const { cardElement } = new NewsCard(item, searchInput.value);
           cardElementArray.push(cardElement);
