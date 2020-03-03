@@ -73,9 +73,9 @@ function start() {
       initialCards.forEach((item) => {
         const { cardElement } = new SaveCard(item);
         cardElementArray.push(cardElement);
-        const cardList = new NewsCardList(resultsList, cardElementArray);
-        cardList.renderResults();
       });
+      const cardList = new NewsCardList(resultsList, cardElementArray);
+      cardList.renderResults();
     }
   }
 
