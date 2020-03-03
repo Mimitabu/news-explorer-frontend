@@ -106,7 +106,6 @@ function cardRender(event) {
       }
       preloader(false);
       moreResults();
-      searchInput.value = '';
       return cardElementArray;
     })
     .catch(() => {
