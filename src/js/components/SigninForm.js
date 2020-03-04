@@ -1,6 +1,6 @@
 import validator from 'validator';
 
-export default class Form {
+export default class SigninForm {
   constructor(domElement) {
     this.domElement = domElement;
     this._validateForm = this._validateForm.bind(this);

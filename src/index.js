@@ -2,8 +2,8 @@ import './style.css';
 import NewsCard from './js/components/NewsCard';
 import NewsCardList from './js/components/NewsCardList';
 import Popup from './js/components/Popup';
-import Form from './js/components/Form';
-import FormExtend from './js/components/FormExtend';
+import SigninForm from './js/components/SigninForm';
+import SignupForm from './js/components/SignupForm';
 
 import {
   closePopupButonIn,
@@ -59,8 +59,8 @@ headerMini.render(getProfile, getCurrentUser());
 
 // попап и форма регистрации
 const popup = new Popup(document.querySelector('.popup'));
-const formSignin = new Form(document.forms.signin);
-const formSignup = new FormExtend(document.forms.signup);
+const formSignin = new SigninForm(document.forms.signin);
+const formSignup = new SignupForm(document.forms.signup);
 
 
 // пустой массив и счетчик, нужные для работы moreResults()

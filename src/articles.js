@@ -147,12 +147,12 @@ function start() {
   // рендер текстового блока и карточек
   mainApi.getArticles()
     .then((data) => {
-      const array = data.data;
-      cardRender(array);
-      putKeys(array);
+      const cardsArray = data.data;
+      cardRender(cardsArray);
+      putKeys(cardsArray);
       sort(objKeys);
-      renerCase(array);
-      renderTextBlock(array, sortKeys);
+      renerCase(cardsArray);
+      renderTextBlock(cardsArray, sortKeys);
     })
     .catch((err) => {
       console.log(err);

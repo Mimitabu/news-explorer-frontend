@@ -1,7 +1,7 @@
-import Form from './Form';
+import SigninForm from './SigninForm';
 
 // Класс формы регистрации, расширяющий класс формы входа
-export default class FormExtend extends Form {
+export default class SignupForm extends SigninForm {
   constructor(domElement) {
     super(domElement);
     this.clear();
@@ -22,7 +22,7 @@ export default class FormExtend extends Form {
         .querySelector('.popup__error-name')
         .textContent = 'Это обязательное поле';
     } else if (str.value.length < 2 ||
-          str.value.length > 30) {
+              str.value.length > 30) {
       this.domElement
         .querySelector('.popup__error-name')
         .textContent = 'Длина имени должна быть от 2 до 30 символов';
