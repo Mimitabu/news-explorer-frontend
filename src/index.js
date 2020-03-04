@@ -95,9 +95,14 @@ function cardRender(event) {
     .then((data) => {
       const dataArticles = data.articles;
       if (dataArticles.length === 0) {
+        showMoreButton.classList.remove('results__more-button_is-opened');
         emptyResults(true);
       } else {
-        showMoreButton.classList.add('results__more-button_is-opened');
+        if (dataArticles.length <= 3) {
+          showMoreButton.classList.remove('results__more-button_is-opened');
+        } else {
+          showMoreButton.classList.add('results__more-button_is-opened');
+        }
         dataArticles.forEach((item) => {
           const { cardElement } = new NewsCard(item, searchInput.value);
           cardElementArray.push(cardElement);
