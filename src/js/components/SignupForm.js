@@ -1,33 +1,33 @@
 import SigninForm from './SigninForm';
+import {
+  REQUIRED_INPUT,
+  NAME_LENGTH,
+} from '../constants/constants';
 
 // Класс формы регистрации, расширяющий класс формы входа
 export default class SignupForm extends SigninForm {
   constructor(domElement) {
     super(domElement);
+    this.signupError = this.domElement
+      .querySelector('.popup__error-signup');
+    this.nameError = this.domElement
+      .querySelector('.popup__error-name');
   }
 
   // добавляет форме ошибку, пришедшую с сервера
   setServerError(errorText) {
-    this.domElement
-      .querySelector('.popup__error-signup')
-      .textContent = errorText;
+    this.signupError.textContent = errorText;
   }
 
   // валидирует name
   _validateLenghtName(str) {
     if (str.value.length === 0) {
-      this.domElement
-        .querySelector('.popup__error-name')
-        .textContent = 'Это обязательное поле';
-    } else if (str.value.length < 2 ||
-              str.value.length > 30) {
-      this.domElement
-        .querySelector('.popup__error-name')
-        .textContent = 'Длина имени должна быть от 2 до 30 символов';
+      this.nameError.textContent = REQUIRED_INPUT;
+    } else if (str.value.length < 2 || str.value.length > 30) {
+      this.nameError
+        .textContent = NAME_LENGTH;
     } else {
-      this.domElement
-        .querySelector('.popup__error-name')
-        .textContent = '';
+      this.nameError.textContent = '';
       return true;
     }
     return false;
@@ -49,18 +49,10 @@ export default class SignupForm extends SigninForm {
 
   // очищает сообщения об ошибках
   clearErrors() {
-    this.domElement
-      .querySelector('.popup__error-name')
-      .textContent = '';
-    this.domElement
-      .querySelector('.popup__error-email')
-      .textContent = '';
-    this.domElement
-      .querySelector('.popup__error-password')
-      .textContent = '';
-    this.domElement
-      .querySelector('.popup__error-signup')
-      .textContent = '';
+    this.nameError.textContent = '';
+    this.emailError.textContent = '';
+    this.passwordError.textContent = '';
+    this.signupError.textContent = '';
   }
 
   // очищает поля формы
