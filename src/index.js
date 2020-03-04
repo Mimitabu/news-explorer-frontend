@@ -68,6 +68,8 @@ formSignin.clearErrors();
 formSignup.clear();
 formSignup.clearErrors();
 
+
+
 // пустой массив и счетчик, нужные для работы moreResults()
 let cardElementArray = [];
 let from = 0;
@@ -149,12 +151,16 @@ function openFormSignin() {
 
 // открытие попапа регистрации
 function openFormSignup() {
+  formSignin.clear();
+  formSignin.clearErrors();
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
 }
 
 // открытие попапа успешной регистрации
 function openFormSuccessSignup() {
+  formSignin.clear();
+  formSignin.clearErrors();
   popup.clearContent('.popup__content-signup');
   popup.setContent('.popup__content_successful-signup');
 }

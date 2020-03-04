@@ -12,8 +12,19 @@ function getUser(item) {
   return JSON.parse(localStorage.getItem(item));
 }
 
+// возвращает текущий из localStorage
+function getToken(item) {
+  return localStorage.getItem(item);
+}
+
 // получение профиля юзера из localstorage
 const getProfile = getUser('user');
+
+// // получение токена юзера из localstorage
+// const token = getToken('token');
+
+console.log('user', getProfile);
+
 
 // удаляет текущего юзера из localStorage
 function deleteUser(item) {
@@ -74,4 +85,5 @@ export {
   errorResults,
   removeAllChild,
   getProfile,
+  getToken,
 };

@@ -4,26 +4,29 @@ export default class SigninForm {
   constructor(domElement) {
     this.domElement = domElement;
     this._validateForm = this._validateForm.bind(this);
+    this.signinButton = this.domElement.querySelector('.popup__button');
+    this.signinError = this.domElement
+      .querySelector('.popup__error-signin');
+    this.emailError = this.domElement
+      .querySelector('.popup__error-email');
+    this.passwordError = this.domElement
+      .querySelector('.popup__error-password');
     this.domElement
       .addEventListener('input', this._validateForm);
   }
 
   // добавляет форме ошибку, пришедшую с сервера
   setServerError(errorText) {
-    this.domElement
-      .querySelector('.popup__error-signin')
-      .textContent = errorText;
+    this.signinError.textContent = errorText;
   }
 
   // валидирует email
   _validateInputElement(str) {
     if (!(validator.isEmail(str.value))) {
-      this.domElement
-        .querySelector('.popup__error-email')
+      this.emailError
         .textContent = 'Неверный формат email';
     } else {
-      this.domElement
-        .querySelector('.popup__error-email')
+      this.emailError
         .textContent = '';
       return true;
     }
@@ -33,16 +36,13 @@ export default class SigninForm {
   // валидирует пароль
   _validatePassword(str) {
     if (str.value.length === 0) {
-      this.domElement
-        .querySelector('.popup__error-password')
+      this.passwordError
         .textContent = 'Это обязательное поле';
     } else if (str.value.length < 6) {
-      this.domElement
-        .querySelector('.popup__error-password')
+      this.passwordError
         .textContent = 'Длина пароля должна быть не меньше 6 символов';
     } else {
-      this.domElement
-        .querySelector('.popup__error-password')
+      this.passwordError
         .textContent = '';
       return true;
     }
@@ -64,15 +64,9 @@ export default class SigninForm {
 
   // очищает сообщения об ошибках
   clearErrors() {
-    this.domElement
-      .querySelector('.popup__error-email')
-      .textContent = '';
-    this.domElement
-      .querySelector('.popup__error-password')
-      .textContent = '';
-    this.domElement
-      .querySelector('.popup__error-signin')
-      .textContent = '';
+    this.emailError.textContent = '';
+    this.passwordError.textContent = '';
+    this.signinError.textContent = '';
   }
 
   // очищает поля формы
@@ -83,18 +77,15 @@ export default class SigninForm {
 
   // деактивирует кнопку входа
   _buttonDisabled() {
-    this.domElement.querySelector('.popup__button')
+    this.signinButton
       .classList.add('popup__button_disabled');
-    this.domElement.querySelector('.popup__button').setAttribute('disabled', true);
+    this.signinButton.setAttribute('disabled', true);
   }
 
   // активирует кнопку входа
   _buttonActive() {
-    this.domElement.querySelector('.popup__button')
+    this.signinButton
       .classList.remove('popup__button_disabled');
-    this.domElement.querySelector('.popup__button').removeAttribute('disabled');
-  }
-
-  _getInfo() {
+    this.signinButton.removeAttribute('disabled');
   }
 }
