@@ -21,7 +21,7 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(res.statusText);
+        return Promise.reject(res.status);
       });
   }
 
@@ -41,7 +41,7 @@ export default class MainApi {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(res.statusText);
+        return Promise.reject(res.status);
       })
       .then((data) => {
         // сохраняем токен

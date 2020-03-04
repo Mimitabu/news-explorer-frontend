@@ -1,7 +1,9 @@
-// import { now, past } from '../constants/constants';
+// сколько дней отсчитывать от сегодняшней даты
+const dateCount = 7;
+
 const data = new Date();
 const previous = new Date();
-previous.setDate(previous.getDate() - 7);
+previous.setDate(previous.getDate() - dateCount);
 const now = data.getFullYear()+'-'+(data.getMonth()+1)+'-'+data.getDate();
 const past = previous.getFullYear()+'-'+(previous.getMonth()+1)+'-'+previous.getDate();
 

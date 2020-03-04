@@ -32,6 +32,7 @@ import {
   NOT_UNIQUE_USER,
   WRONG,
   NOT_REGISTERED,
+  NO_INTERNET,
 } from './js/constants/constants';
 
 
@@ -185,8 +186,10 @@ function signup(event) {
       openFormSuccessSignup();
     })
     .catch((err) => {
-      if (err === 'Bad Request') {
+      if (err == '400') {
         formSignup.setServerError(NOT_UNIQUE_USER);
+      } else if (err == 'TypeError: Failed to fetch') {
+        formSignup.setServerError(NO_INTERNET);
       }
     });
 }
@@ -204,8 +207,10 @@ function signin(event) {
       document.location.reload();
     })
     .catch((err) => {
-      if (err === 'Unauthorized') {
+      if (err == '401') {
         formSignin.setServerError(WRONG);
+      } else if (err == 'TypeError: Failed to fetch') {
+        formSignin.setServerError(NO_INTERNET);
       } else {
         formSignin.setServerError(NOT_REGISTERED);
       }

@@ -87,6 +87,7 @@ const WRONG_EMAIL = 'Неверный формат email';
 const REQUIRED_INPUT = 'Это обязательное поле';
 const PASSWORD_LENGTH = 'Длина пароля должна быть не меньше 6 символов';
 const NAME_LENGTH = 'Длина имени должна быть от 2 до 30 символов';
+const NO_INTERNET = 'No internet connection';
 
 export {
   closePopupButonIn,
@@ -136,4 +137,5 @@ export {
   REQUIRED_INPUT,
   PASSWORD_LENGTH,
   NAME_LENGTH,
+  NO_INTERNET,
 };
