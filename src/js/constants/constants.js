@@ -83,6 +83,9 @@ const SAVE_THREE = ' сохраненных статей';
 const NOT_UNIQUE_USER = 'Такой пользователь уже существует';
 const WRONG = 'Неверный логин или пароль';
 const NOT_REGISTERED = 'Пользователь не зарегистрирован';
+const WRONG_EMAIL = 'Неверный формат email';
+const REQUIRED_INPUT = 'Это обязательное поле';
+const PASSWORD_LENGTH = 'Длина пароля должна быть не меньше 6 символов';
 
 
 export {
@@ -129,4 +132,7 @@ export {
   NOT_UNIQUE_USER,
   WRONG,
   NOT_REGISTERED,
+  WRONG_EMAIL,
+  REQUIRED_INPUT,
+  PASSWORD_LENGTH,
 };

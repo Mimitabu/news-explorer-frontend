@@ -1,4 +1,9 @@
 import validator from 'validator';
+import {
+  WRONG_EMAIL,
+  REQUIRED_INPUT,
+  PASSWORD_LENGTH,
+} from '../constants/constants';
 
 export default class SigninForm {
   constructor(domElement) {
@@ -24,7 +29,7 @@ export default class SigninForm {
   _validateInputElement(str) {
     if (!(validator.isEmail(str.value))) {
       this.emailError
-        .textContent = 'Неверный формат email';
+        .textContent = WRONG_EMAIL;
     } else {
       this.emailError
         .textContent = '';
@@ -37,10 +42,10 @@ export default class SigninForm {
   _validatePassword(str) {
     if (str.value.length === 0) {
       this.passwordError
-        .textContent = 'Это обязательное поле';
+        .textContent = REQUIRED_INPUT;
     } else if (str.value.length < 6) {
       this.passwordError
-        .textContent = 'Длина пароля должна быть не меньше 6 символов';
+        .textContent = PASSWORD_LENGTH;
     } else {
       this.passwordError
         .textContent = '';
