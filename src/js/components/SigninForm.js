@@ -4,8 +4,6 @@ export default class SigninForm {
   constructor(domElement) {
     this.domElement = domElement;
     this._validateForm = this._validateForm.bind(this);
-    this.clearErrors();
-    this.clear();
     this.domElement
       .addEventListener('input', this._validateForm);
   }

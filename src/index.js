@@ -62,6 +62,11 @@ const popup = new Popup(document.querySelector('.popup'));
 const formSignin = new SigninForm(document.forms.signin);
 const formSignup = new SignupForm(document.forms.signup);
 
+// удаляем ошибки в формах при загрузке страницы
+formSignin.clear();
+formSignin.clearErrors();
+formSignup.clear();
+formSignup.clearErrors();
 
 // пустой массив и счетчик, нужные для работы moreResults()
 let cardElementArray = [];

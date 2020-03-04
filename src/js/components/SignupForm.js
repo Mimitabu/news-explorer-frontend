@@ -4,8 +4,6 @@ import SigninForm from './SigninForm';
 export default class SignupForm extends SigninForm {
   constructor(domElement) {
     super(domElement);
-    this.clear();
-    this.clearErrors();
   }
 
   // добавляет форме ошибку, пришедшую с сервера
