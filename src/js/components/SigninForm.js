@@ -72,12 +72,14 @@ export default class SigninForm {
     this.emailError.textContent = '';
     this.passwordError.textContent = '';
     this.signinError.textContent = '';
+    this._buttonDisabled();
   }
 
   // очищает поля формы
   clear() {
     this.domElement.email.value = '';
     this.domElement.password.value = '';
+    this._buttonDisabled();
   }
 
   // деактивирует кнопку входа

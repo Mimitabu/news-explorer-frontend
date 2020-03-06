@@ -144,6 +144,8 @@ function closeHeaderMini() {
 // открытие попапа входа
 function openFormSignin() {
   popup.open();
+  formSignin.clear();
+  formSignin.clearErrors();
   popup.clearContent('.popup__content-signup');
   popup.clearContent('.popup__content_successful-signup');
   popup.setContent('.popup__content-signin');
@@ -154,6 +156,8 @@ function openFormSignin() {
 function openFormSignup() {
   formSignin.clear();
   formSignin.clearErrors();
+  formSignup.clear();
+  formSignup.clearErrors();
   popup.clearContent('.popup__content-signin');
   popup.setContent('.popup__content-signup');
 }

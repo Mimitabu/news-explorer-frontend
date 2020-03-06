@@ -53,6 +53,7 @@ export default class SignupForm extends SigninForm {
     this.emailError.textContent = '';
     this.passwordError.textContent = '';
     this.signupError.textContent = '';
+    this._buttonDisabled();
   }
 
   // очищает поля формы
@@ -60,5 +61,6 @@ export default class SignupForm extends SigninForm {
     this.domElement.email.value = '';
     this.domElement.password.value = '';
     this.domElement.name.value = '';
+    this._buttonDisabled();
   }
 }
