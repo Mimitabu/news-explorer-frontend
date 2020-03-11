@@ -1,0 +1,28 @@
+.search__elements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .search__elements {
+  margin: auto 163px;
+  }
+}
+
+
+@media (max-width: 680px) {
+  .search__elements {
+  margin: auto 19px;
+  }
+}
+
+@media (max-width: 490px) {
+  .search__elements {
+    margin: auto 16px;
+    width: 100%;
+  }
+}

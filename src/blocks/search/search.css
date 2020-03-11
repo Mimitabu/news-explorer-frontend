@@ -1,0 +1,32 @@
+@import url(./__title/search__title.css);
+@import url(./__subtitle/search__subtitle.css);
+@import url(./__input/search__input.css);
+@import url(./__elements/search__elements.css);
+@import url(./__button/search__button.css);
+@import url(./__form/search__form.css);
+
+
+.search {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  min-height: 496px;
+}
+
+@media (max-width: 1024px) {
+  .search {
+    min-height: 415px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search {
+    min-height: 334px;
+  }
+}
+
+@media (max-width: 680px) {
+  .search {
+    min-height: 480px;
+  }
+}

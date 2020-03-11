@@ -1,0 +1,14 @@
+.footer-mini__main-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Roboto', 'Verdana';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 48px;
+}
+
+.footer-mini__main-links:nth-child(1){
+  margin-bottom: 24px;
+}

@@ -1,0 +1,28 @@
+.header__saved-massages {
+  margin: 0px 30px 0px 0px;
+  display: none;
+  border-bottom: solid 3px #FFFFFF;
+  padding-bottom: 27px;
+}
+
+.header__saved-massages:hover {
+  border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+    .header__saved-massages {
+      padding-bottom: 18px;
+    }
+}
+
+@media (max-width: 860px) {
+    .header__saved-massages {
+      padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__saved-massages {
+      padding-bottom: 16px;
+    }
+}

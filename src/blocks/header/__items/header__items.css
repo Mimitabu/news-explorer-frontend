@@ -1,0 +1,27 @@
+.header__items {
+    width: calc(100% - 208px);
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .header__items {
+    width: calc(100% - 160px);
+  }
+}
+
+@media (max-width: 860px) {
+  .header__items {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 425px) {
+  .header__items {
+    width: calc(100% - 32px);
+  }
+}

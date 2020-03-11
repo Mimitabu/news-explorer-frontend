@@ -1,0 +1,31 @@
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    transform: translateY(7px);
+}
+
+@media (max-width: 1024px) {
+  .header__nav {
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 860px) {
+  .header__nav {
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 680px) {
+  .header__nav {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__nav {
+    display: none;
+  }
+}

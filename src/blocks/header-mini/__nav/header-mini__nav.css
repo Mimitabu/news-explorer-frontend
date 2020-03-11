@@ -1,0 +1,6 @@
+.header-mini__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 16px 16px 24px;
+}

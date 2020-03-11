@@ -1,0 +1,39 @@
+.header-search-page {
+    background-image: url(../../images/main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 576px;
+    width: 100%;
+    margin: 0px auto;
+    background-position: center;
+}
+
+@media (max-width: 1024px) {
+  .header-search-page {
+    max-height: 488px;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-search-page {
+    max-height: 400px;
+    background-size: cover;
+
+  }
+}
+
+@media (max-width: 680px) {
+  .header-search-page {
+    max-height: 536px;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 425px) {
+  .header-search-page {
+    background-image: url(../../images/main-mobile.jpg);
+    max-height: 536px;
+    background-size: cover;
+  }
+}

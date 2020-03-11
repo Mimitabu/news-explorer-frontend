@@ -1,0 +1,10 @@
+.header-mini__items {
+  background-color: #1A1B22;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  margin: 0px;
+}

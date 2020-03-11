@@ -1,0 +1,26 @@
+.about-author__title {
+  font-family: 'Roboto Slab', 'Verdana';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  color: #1A1B22;
+  margin: 0px 0px 24px;
+}
+
+@media (max-width: 1024px) {
+  .about-author__title {
+    font-size: 35px;
+    line-height: 43px;
+    margin: 0px 0px 20px;
+  }
+}
+
+@media (max-width: 728px) {
+  .about-author__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0px 0px 16px;
+  }
+}
+

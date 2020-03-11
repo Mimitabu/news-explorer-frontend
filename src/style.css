@@ -1,0 +1,24 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./blocks/body/body.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/header-search-page/header-search-page.css);
+@import url(./blocks/search/search.css);
+@import url(./blocks/about-author/about-author.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_is-opened/popup_is-opened.css);
+@import url(./blocks/results/results.css);
+@import url(./blocks/results/_is-opened/results_is-opened.css);
+@import url(./blocks/result-card/result-card.css);
+@import url(./blocks/news-search/news-search.css);
+@import url(./blocks/news-search/_is-opened/news-search_is-opened.css);
+@import url(./blocks/no-results/no-results.css);
+@import url(./blocks/no-results/_is-opened/no-results_is-opened.css);
+@import url(./blocks/favorites/favorites.css);
+@import url(./blocks/header-mini/header-mini.css);
+@import url(./blocks/header-mini/_is-opened/header-mini_is-opened.css);
+@import url(./blocks/footer-mini/footer-mini.css);
+
+

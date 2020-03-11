@@ -1,0 +1,9 @@
+.popup__sign-in {
+  font-family: 'Inter', 'Verdana';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2F71E5;
+  cursor: pointer;
+}

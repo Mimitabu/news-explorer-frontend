@@ -1,0 +1,13 @@
+.news-search__text {
+  font-family: 'Roboto', 'Verdana';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #B6BCBF;
+  width: 248px;
+  height: 24px;
+  z-index: 2;
+  margin: 24px auto 0px;
+}

@@ -1,0 +1,11 @@
+.no-results__title {
+  font-family: 'Roboto Slab', 'Verdana';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: center;
+  color: #1A1B22;
+  margin: 40px 0px 16px;
+  display: none;
+}
